@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美國政府 UFO/UAP 披露檔案 — 四次重大公布全紀錄</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans HK', sans-serif;
+    background: #0a0a0f;
+    color: #c8d6e5;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ===== STARFIELD BACKGROUND ===== */
+  #stars-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: linear-gradient(180deg, rgba(10,20,60,0.95) 0%, rgba(10,10,15,0.8) 100%);
+  }
+
+  header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #00e5ff;
+    text-shadow: 0 0 30px rgba(0,229,255,0.5), 0 0 60px rgba(0,229,255,0.2);
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+
+  header .subtitle {
+    font-size: 1.1rem;
+    color: #7f8fa6;
+    letter-spacing: 2px;
+  }
+
+  header .badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #00e5ff;
+    letter-spacing: 1px;
+  }
+
+  /* ===== TIMELINE SECTION ===== */
+  .timeline-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: #00e5ff;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+  }
+
+  /* Timeline vertical line */
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(0,229,255,0.4), rgba(0,229,255,0.05));
+    z-index: 0;
+  }
+
+  /* ===== EVENT CARDS ===== */
+  .event {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 70px;
+    z-index: 1;
+  }
+
+  .event:nth-child(odd) { flex-direction: row; }
+  .event:nth-child(even) { flex-direction: row-reverse; }
+
+  .event-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    background: #00e5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,229,255,0.6);
+    z-index: 2;
+  }
+
+  .event-content {
+    width: 44%;
+    background: rgba(15,15,30,0.8);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .event-content:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,229,255,0.4);
+  }
+
+  .event:nth-child(odd) .event-content { margin-right: 6%; }
+  .event:nth-child(even) .event-content { margin-left: 6%; }
+
+  .event-date {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #00e5ff;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+
+  .event-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: rgba(0,229,255,0.08);
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    pointer-events: none;
+  }
+
+  .event h2 {
+    font-size: 1.5rem;
+    color: #f5f6fa;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .event p {
+    color: #a4b0be;
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+  }
+
+  .event .highlight-box {
+    background: rgba(0,229,255,0.05);
+    border-left: 3px solid #00e5ff;
+    padding: 12px 16px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .event .highlight-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .event .highlight-box ul li {
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .event .highlight-box ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00e5ff;
+  }
+
+  .event .tag {
+    display: inline-block;
+    background: rgba(0,229,255,0.1);
+    color: #00e5ff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    margin: 4px 6px 4px 0;
+    letter-spacing: 1px;
+  }
+
+  /* ===== IMAGE GALLERY ===== */
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .image-gallery .img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    background: rgba(0,0,0,0.3);
+  }
+
+  .image-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .image-gallery .img-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-gallery .img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: #c8d6e5;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    text-align: center;
+  }
+
+  /* ===== VIDEO LINK ===== */
+  .video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #00e5ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+
+  .video-link:hover {
+    background: rgba(0,229,255,0.1);
+    border-color: #00e5ff;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 24px 16px;
+    background: rgba(15,15,30,0.6);
+    border: 1px solid rgba(0,229,255,0.1);
+    border-radius: 16px;
+  }
+
+  .stat-card .stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #00e5ff;
+    line-height: 1;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.85rem;
+    color: #7f8fa6;
+    margin-top: 8px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(0,229,255,0.1);
+    color: #57606f;
+    font-size: 0.85rem;
+  }
+
+  footer a {
+    color: #00e5ff;
+    text-decoration: none;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .timeline-line, .event-dot { display: none; }
+
+    .event, .event:nth-child(odd), .event:nth-child(even) {
+      flex-direction: column;
+    }
+
+    .event-content, .event:nth-child(odd) .event-content, .event:nth-child(even) .event-content {
+      width: 100%;
+      margin: 0;
+    }
+
+    .event-number { display: none; }
+
+    .image-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>🛸 美國政府 UFO/UAP 披露檔案</h1>
+  <div class="subtitle">從否認到公開 — 四次重大公布全紀錄</div>
+  <div class="badge">📁 解密文件 • 官方報告 • 國會聽證</div>
+</header>
+
+<!-- ===== QUICK STATS ===== -->
+<div class="stats-bar">
+  <div class="stat-card">
+    <div class="stat-number">144+</div>
+    <div class="stat-label">政府記錄個案</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">143</div>
+    <div class="stat-label">無法解釋個案</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">3</div>
+    <div class="stat-label">軍方公開影片</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">4</div>
+    <div class="stat-label">重大披露里程碑</div>
+  </div>
+</div>
+
+<!-- ===== TIMELINE ===== -->
+<div class="timeline-container">
+  <div class="section-title">📋 披露時間線</div>
+  <div class="timeline-line"></div>
+
+  <!-- EVENT 1: 2017 NYT -->
+  <div class="event">
+    <div class="event-dot"></div>
+    <div class="event-content">
+      <div class="event-number">01</div>
+      <div class="event-date">2017 年 12 月</div>
+      <h2>《紐約時報》揭露 AATIP 秘密計劃<br>＋ 三段 UFO 影片首次曝光</h2>
+
+      <div class="tag">紐約時報</div>
+      <div class="tag">AATIP</div>
+      <div class="tag">影片洩漏</div>
+
+      <p>2017年12月16日，《紐約時報》與《Politico》同步發表震撼報導，首次揭露美國國防部自2007年起秘密運行的「<strong>先進航空航天威脅識別計劃</strong>」（AATIP），該計劃由參議員 Harry Reid 推動，耗資約 2,200 萬美元，專門調查不明空中現象。</p>
+
+      <div class="highlight-box">
+        <ul>
+          <li>計劃負責人 Luis Elizondo 於2017年10月辭職，公開批評政府過度保密</li>
+          <li>三段由美國海軍 F/A-18 戰機拍攝的 UFO 紅外線影片外洩</li>
+          <li>影片分別命名為：<strong>FLIR（Tic Tac）、GIMBAL、GOFAST</strong></li>
+          <li>標誌著現代 UFO 披露時代的開端</li>
+        </ul>
+      </div>
+
+      <p>這篇報導引爆全球關注，迫使美國政府正視 UFO 議題，為後續所有官方披露鋪路。</p>
+
+      <div class="image-gallery">
+        <div class="img-wrapper">
+          <img src="https://www.wowktv.com/wp-content/uploads/sites/52/2019/05/tic_tac_ufo_2_700_1556575988383_85062381_ver1.0_1280_720_1556670826340_85282481_ver1.0.jpg" alt="Tic Tac UFO 紅外線影像" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">FLIR「Tic Tac」— 2004年尼米茲號事件</div>
+        </div>
+        <div class="img-wrapper">
+          <img src="https://e3.365dm.com/23/07/1600x900/skynews-ufo-tic-tac-us-airforce_6231705.jpg?20230901093731" alt="Tic Tac UFO 模擬圖" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">五角大樓 Tic Tac UFO 模擬圖</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 2: 2020 Pentagon -->
+  <div class="event">
+    <div class="event-dot"></div>
+    <div class="event-content">
+      <div class="event-number">02</div>
+      <div class="event-date">2020 年 4 月 27 日</div>
+      <h2>五角大樓正式解密<br>公開三段 UFO 影片</h2>
+
+      <div class="tag">五角大樓</div>
+      <div class="tag">官方解密</div>
+      <div class="tag">歷史性轉折</div>
+
+      <p>2020年4月27日，美國國防部（五角大樓）<strong>正式解密並公開</strong>三段由海軍飛行員拍攝的 UFO 影片。此舉確認了2017年外洩影片的真實性，代表美國政府首次官方承認這些不明空中現象的存在。</p>
+
+      <div class="highlight-box">
+        <ul>
+          <li><strong>FLIR（Tic Tac）</strong>：2004年尼米茲號航母戰鬥群目擊，白色橢圓形物體在無可見推進裝置下高速移動</li>
+          <li><strong>GIMBAL</strong>：2015年羅斯福號航母戰鬥群拍攝，碟形物體在強風中旋轉</li>
+          <li><strong>GOFAST</strong>：2015年拍攝，不明物體在海面上方高速掠過</li>
+          <li>五角大樓聲明：「影片中的空中現象仍被歸類為『不明』」</li>
+        </ul>
+      </div>
+
+      <a class="video-link" href="https://www.youtube.com/watch?v=oIN4BOzN-DI" target="_blank" rel="noopener">
+        🎬 觀看三段完整影片 ▶
+      </a>
+
+      <div class="image-gallery">
+        <div class="img-wrapper">
+          <img src="https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_VMS/28/227/gimbal_edit_final-converted_HD.jpg" alt="GIMBAL UFO 影片截圖" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">GIMBAL 影片截圖 — 碟形物體旋轉</div>
+        </div>
+        <div class="img-wrapper">
+          <img src="https://rp-online.de/imgs/32/8/2/4/9/4/3/1/3/tok_3f330c125b7b8467cd2f1f240b0c52e6/w1300_h1281_x650_y640_AFP_fAFP_1QV4WY-d4ed51f6d3a99d9f.jpg" alt="GOFAST UFO 影片截圖" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">GOFAST 影片截圖 — 物體高速掠過海面</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 3: 2021 ODNI Report -->
+  <div class="event">
+    <div class="event-dot"></div>
+    <div class="event-content">
+      <div class="event-number">03</div>
+      <div class="event-date">2021 年 6 月 25 日</div>
+      <h2>ODNI 發布首份 UAP 初步評估報告<br>144 宗個案 • 143 宗無法解釋</h2>
+
+      <div class="tag">ODNI</div>
+      <div class="tag">官方報告</div>
+      <div class="tag">九頁報告</div>
+
+      <p>在國會強制要求下，<strong>美國國家情報總監辦公室（ODNI）</strong>於2021年6月25日發布長達9頁的《不明空中現象初步評估報告》。這是美國情報界首次向公眾提交關於 UAP 的官方綜合報告。</p>
+
+      <div class="highlight-box">
+        <ul>
+          <li>分析 2004–2021 年間 <strong>144 宗</strong>軍事人員目擊個案</li>
+          <li><strong>143 宗</strong>（99.3%）無法確定其成因</li>
+          <li>唯一能「高度確信」辨識的是一個洩氣的大型氣球</li>
+          <li><strong>18 宗</strong>顯示「不尋常飛行特徵」：高空逆風靜止、突然變向、極高速移動、無可見推進裝置</li>
+          <li><strong>11 宗</strong>為飛行員通報的「近距離接觸/險些相撞」</li>
+          <li>部分 UAP 曾釋放<strong>無線電頻率能量</strong></li>
+        </ul>
+      </div>
+
+      <p>五大潛在解釋類別：空中雜物｜自然大氣現象｜美國機密計劃｜外國對手系統｜<strong>其他（無法歸類）</strong></p>
+      <p>報告結論：「目前沒有明確跡象顯示這些現象具有任何非地球來源的解釋，但我們將依據數據持續追查。」</p>
+
+      <a class="video-link" href="https://www.dni.gov/files/ODNI/documents/assessments/Prelimary-Assessment-UAP-20210625.pdf" target="_blank" rel="noopener">
+        📄 下載 ODNI 報告全文 (PDF) ▶
+      </a>
+    </div>
+  </div>
+
+  <!-- EVENT 4: 2023 Congressional Hearing -->
+  <div class="event">
+    <div class="event-dot"></div>
+    <div class="event-content">
+      <div class="event-number">04</div>
+      <div class="event-date">2023 年 7 月 26 日</div>
+      <h2>美國國會歷史性 UAP 聽證會<br>前情報官宣誓作證：政府隱瞞真相</h2>
+
+      <div class="tag">國會聽證</div>
+      <div class="tag">告密者</div>
+      <div class="tag">爆炸性證詞</div>
+
+      <p>2023年7月26日，美國眾議院監督委員會舉行<strong>歷史性 UAP 公開聽證會</strong>，三名關鍵證人在宣誓下作證，震撼全球。</p>
+
+      <div class="highlight-box">
+        <ul>
+          <li><strong>David Grusch（前空軍情報官）</strong>：指控美國政府數十年來秘密進行「非人類」飛行器逆向工程計劃，持有「非人類生物遺骸」</li>
+          <li><strong>Ryan Graves（前F/A-18飛行員）</strong>：描述在大西洋執行任務時幾乎每日目擊UAP，指政府隱瞞飛行安全風險</li>
+          <li><strong>David Fravor（前海軍指揮官）</strong>：親述2004年尼米茲號「Tic Tac」目擊經歷，所見物體技術遠超人類能力</li>
+        </ul>
+      </div>
+
+      <p>Grusch 的證詞成為最大震撼彈：他聲稱掌握證據顯示美國政府擁有「已墜毀的非人類飛行器」，並對相關人員進行人身威脅以保密。此聽證會促使國會推動《UAP 披露法案》。</p>
+
+      <div class="image-gallery">
+        <div class="img-wrapper">
+          <img src="https://assets2.cbsnewsstatic.com/hub/i/r/2023/07/26/ca1c19b7-c2f8-4796-a5c9-c7760901b986/thumbnail/1240x828/8ea0507efcf5a82d218e92b34e071912/gettyimages-1556765955.jpg" alt="2023國會UAP聽證會" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">David Grusch 在國會宣誓作證</div>
+        </div>
+        <div class="img-wrapper">
+          <img src="https://static01.nyt.com/images/2023/07/26/multimedia/26dc-ufos-01-vwmf/26dc-ufos-01-vwmf-jumbo.jpg?quality=75&auto=webp" alt="2023國會UAP聽證會全景" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">2023年眾議院 UAP 聽證會現場</div>
+        </div>
+      </div>
+
+      <a class="video-link" href="https://www.youtube.com/watch?v=KQ7DwZ0oBSY" target="_blank" rel="noopener">
+        🎬 觀看聽證會完整錄影 ▶
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOLLOW-UP NOTE ===== -->
+<div style="position:relative;z-index:1;max-width:1000px;margin:0 auto 60px;padding:0 20px;">
+  <div style="background:rgba(0,229,255,0.05);border:1px solid rgba(0,229,255,0.15);border-radius:16px;padding:30px;">
+    <h3 style="font-family:'Orbitron',sans-serif;color:#00e5ff;margin-bottom:16px;">🔭 後續發展</h3>
+    <p style="color:#a4b0be;margin-bottom:10px;">
+      <strong>2022年7月</strong> — 國防部成立 <strong>AARO</strong>（全域異常解決辦公室），取代 UAPTF，成為永久性 UAP 調查機構。
+    </p>
+    <p style="color:#a4b0be;margin-bottom:10px;">
+      <strong>2023–2024年</strong> — AARO 發布多份年度報告，持續收集和分析 UAP 報告。國會通過《UAP 披露法案》，要求政府逐步解密相關文件。
+    </p>
+    <p style="color:#a4b0be;margin-bottom:10px;">
+      <strong>2026年5月</strong> — 川普政府啟動大規模 UAP 解密計劃，在 <a href="https://www.war.gov/UFO/" target="_blank" style="color:#00e5ff;">WAR.GOV/UFO</a> 公開數十年累積的機密檔案，包括軍方備忘錄、阿波羅任務報告、飛行員目擊紀錄等。
+    </p>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>資料來源：<a href="https://www.dni.gov/" target="_blank">ODNI</a> · 
+     <a href="https://www.defense.gov/" target="_blank">美國國防部</a> · 
+     <a href="https://www.aaro.mil/" target="_blank">AARO</a> · 
+     <a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV/UFO</a></p>
+  <p style="margin-top:10px;">本頁內容僅供資訊參考，基於美國政府公開資料彙編 | UFO 外星生態分析</p>
+</footer>
+
+<!-- ===== STARFIELD SCRIPT ===== -->
+<script>
+(function() {
+  var canvas = document.getElementById('stars-canvas');
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  var STAR_COUNT = 200;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (var i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.5,
+      twinkle: Math.random() * Math.PI * 2,
+      speed: Math.random() * 0.02 + 0.005
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      s.twinkle += s.speed;
+      var alpha = 0.3 + Math.sin(s.twinkle) * 0.3;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(200,220,255,' + alpha + ')';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>

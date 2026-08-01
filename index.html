@@ -17,7 +17,6 @@
     overflow-x: hidden;
   }
 
-  /* ===== STARFIELD BACKGROUND ===== */
   #stars-canvas {
     position: fixed;
     top: 0; left: 0;
@@ -61,7 +60,89 @@
     letter-spacing: 1px;
   }
 
-  /* ===== TIMELINE SECTION ===== */
+  /* ===== PHOTO GALLERY SECTION ===== */
+  .photo-gallery-section {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .photo-gallery-section .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: #00e5ff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .photo-card {
+    background: rgba(15,15,30,0.8);
+    border: 1px solid rgba(0,229,255,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .photo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,229,255,0.4);
+  }
+
+  .photo-card .photo-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .photo-card:hover img {
+    transform: scale(1.06);
+  }
+
+  .photo-card .photo-info {
+    padding: 12px 16px;
+  }
+
+  .photo-card .photo-title {
+    font-size: 0.95rem;
+    color: #f5f6fa;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .photo-card .photo-source {
+    font-size: 0.75rem;
+    color: #57606f;
+  }
+
+  .photo-card .photo-tag {
+    display: inline-block;
+    background: rgba(0,229,255,0.1);
+    color: #00e5ff;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin-top: 6px;
+  }
+
+  /* ===== TIMELINE ===== */
   .timeline-container {
     position: relative;
     z-index: 1;
@@ -70,7 +151,7 @@
     padding: 0 20px;
   }
 
-  .section-title {
+  .timeline-container .section-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.6rem;
     color: #00e5ff;
@@ -79,7 +160,6 @@
     letter-spacing: 2px;
   }
 
-  /* Timeline vertical line */
   .timeline-line {
     position: absolute;
     left: 50%;
@@ -91,7 +171,6 @@
     z-index: 0;
   }
 
-  /* ===== EVENT CARDS ===== */
   .event {
     position: relative;
     display: flex;
@@ -203,7 +282,6 @@
     letter-spacing: 1px;
   }
 
-  /* ===== IMAGE GALLERY ===== */
   .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -235,14 +313,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
     color: #c8d6e5;
-    font-size: 0.75rem;
-    padding: 6px 10px;
+    font-size: 0.72rem;
+    padding: 5px 10px;
     text-align: center;
   }
 
-  /* ===== VIDEO LINK ===== */
   .video-link {
     display: inline-flex;
     align-items: center;
@@ -267,7 +344,7 @@
     position: relative;
     z-index: 1;
     max-width: 1000px;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     padding: 30px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -293,6 +370,41 @@
     font-size: 0.85rem;
     color: #7f8fa6;
     margin-top: 8px;
+  }
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .lightbox-overlay.active {
+    display: flex;
+  }
+
+  .lightbox-overlay img {
+    max-width: 92vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 60px rgba(0,229,255,0.2);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10000;
   }
 
   /* ===== FOOTER ===== */
@@ -329,6 +441,10 @@
     .image-gallery {
       grid-template-columns: 1fr;
     }
+
+    .photo-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
   }
 </style>
 </head>
@@ -336,11 +452,17 @@
 
 <canvas id="stars-canvas"></canvas>
 
+<!-- ===== LIGHTBOX OVERLAY ===== -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <!-- ===== HEADER ===== -->
 <header>
   <h1>🛸 美國政府 UFO/UAP 披露檔案</h1>
   <div class="subtitle">從否認到公開 — 四次重大公布全紀錄</div>
-  <div class="badge">📁 解密文件 • 官方報告 • 國會聽證</div>
+  <div class="badge">📁 解密文件 • 官方報告 • 國會聽證 • 實拍影像</div>
 </header>
 
 <!-- ===== QUICK STATS ===== -->
@@ -354,8 +476,8 @@
     <div class="stat-label">無法解釋個案</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">3</div>
-    <div class="stat-label">軍方公開影片</div>
+    <div class="stat-number">6</div>
+    <div class="stat-label">實拍影像</div>
   </div>
   <div class="stat-card">
     <div class="stat-number">4</div>
@@ -363,9 +485,119 @@
   </div>
 </div>
 
+<!-- ===== PHOTO GALLERY ===== -->
+<div class="photo-gallery-section">
+  <div class="section-title">📸 解密 UFO/UAP 影像資料庫</div>
+  <div class="photo-grid">
+
+    <!-- Row 1: Classic -->
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://media.defense.gov/2008/Jun/26/2000697153/1200/1200/0/080626-F-1234S-001.JPG" alt="美國空軍解密飛碟設計圖" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🛸 美國空軍解密「飛碟」設計圖</div>
+        <div class="photo-source">U.S. Air Force 解密檔案</div>
+        <div class="photo-tag">1950年代</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://image.cnbcfm.com/api/v1/image/106509330-1588069334820usnavyufo2.png?v=1588071060&w=1920&h=1080" alt="美國海軍飛行員拍攝UFO" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🎯 海軍飛行員拍攝：不明物體</div>
+        <div class="photo-source">U.S. Navy / CNBC</div>
+        <div class="photo-tag">海軍解密</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/180313050904-navy-ufo-encounter.jpg?q=x_2,y_0,h_1078,w_1915,c_crop/w_1280" alt="CNN報導美軍UFO遭遇" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🛩️ 美軍F/A-18戰機UFO遭遇</div>
+        <div class="photo-source">CNN / 美國國防部</div>
+        <div class="photo-tag">紅外線影像</div>
+      </div>
+    </div>
+
+    <!-- Row 2: Navy UAP -->
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://static01.nyt.com/images/2019/05/28/video/00DC-UFO-vid/00DC-UFO-vid-videoSixteenByNine1050-v2.jpg" alt="NYT報導海軍飛行員UFO目擊" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">📡 海軍飛行員：「Wow, What Is That?」</div>
+        <div class="photo-source">New York Times</div>
+        <div class="photo-tag">飛行員證詞</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/63DE/production/_99266552_p05rhx6s.jpg" alt="BBC報導美軍UFO影片" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🔍 戰機抬頭顯示器捕捉UFO</div>
+        <div class="photo-source">BBC News / 美國國防部</div>
+        <div class="photo-tag">HUD錄影</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2021/04/1200/675/UFO2.jpg" alt="Fox News報導UFO影像" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🔺 三角型UAP目擊影像</div>
+        <div class="photo-source">Fox News / 美國國防部</div>
+        <div class="photo-tag">夜視影像</div>
+      </div>
+    </div>
+
+    <!-- Row 3: 2026 WAR.GOV -->
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://static.foxnews.com/foxnews.com/content/uploads/2026/05/uap_fbi_dow.jpg" alt="2026 WAR.GOV解密FBI UAP檔案" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">📂 2026年 WAR.GOV 大規模解密</div>
+        <div class="photo-source">Fox News / WAR.GOV</div>
+        <div class="photo-tag">2026 最新</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://a57.foxnews.com/cf-images.us-east-1.prod.boltdns.net/v1/static/694940094001/033b0fb6-3b24-44a8-802c-e90d8ff37d20/81d239c2-d8b4-4478-a670-ecad222bb2ed/1280x720/match/896/500/image.jpg?ve=1&tl=1" alt="F-16拍攝UAP影片" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🎥 F-16 戰機拍攝 UAP 影片</div>
+        <div class="photo-source">Fox News / WAR.GOV</div>
+        <div class="photo-tag">2026 解密</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/1200/675/ufo-spaceship-fbi-investigation-fox-news-001-scaled.jpeg?ve=1&tl=1" alt="FBI調查UFO檔案" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.parentElement.style.display='none'">
+      </div>
+      <div class="photo-info">
+        <div class="photo-title">🕵️ FBI 機密UFO調查檔案曝光</div>
+        <div class="photo-source">Fox News / WAR.GOV</div>
+        <div class="photo-tag">2026 解密</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- ===== TIMELINE ===== -->
 <div class="timeline-container">
-  <div class="section-title">📋 披露時間線</div>
+  <div class="section-title">📋 四大披露時間線</div>
   <div class="timeline-line"></div>
 
   <!-- EVENT 1: 2017 NYT -->
@@ -395,12 +627,12 @@
 
       <div class="image-gallery">
         <div class="img-wrapper">
-          <img src="https://www.wowktv.com/wp-content/uploads/sites/52/2019/05/tic_tac_ufo_2_700_1556575988383_85062381_ver1.0_1280_720_1556670826340_85282481_ver1.0.jpg" alt="Tic Tac UFO 紅外線影像" loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="img-caption">FLIR「Tic Tac」— 2004年尼米茲號事件</div>
+          <img src="https://www.wowktv.com/wp-content/uploads/sites/52/2019/05/tic_tac_ufo_2_700_1556575988383_85062381_ver1.0_1280_720_1556670826340_85282481_ver1.0.jpg" alt="Tic Tac UFO" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">FLIR「Tic Tac」紅外線影像</div>
         </div>
         <div class="img-wrapper">
-          <img src="https://e3.365dm.com/23/07/1600x900/skynews-ufo-tic-tac-us-airforce_6231705.jpg?20230901093731" alt="Tic Tac UFO 模擬圖" loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="img-caption">五角大樓 Tic Tac UFO 模擬圖</div>
+          <img src="https://e3.365dm.com/23/07/1600x900/skynews-ufo-tic-tac-us-airforce_6231705.jpg?20230901093731" alt="Tic Tac 模擬圖" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">五角大樓 Tic Tac 模擬圖</div>
         </div>
       </div>
     </div>
@@ -435,12 +667,12 @@
 
       <div class="image-gallery">
         <div class="img-wrapper">
-          <img src="https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_VMS/28/227/gimbal_edit_final-converted_HD.jpg" alt="GIMBAL UFO 影片截圖" loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="img-caption">GIMBAL 影片截圖 — 碟形物體旋轉</div>
+          <img src="https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_VMS/28/227/gimbal_edit_final-converted_HD.jpg" alt="GIMBAL" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">GIMBAL — 碟形物體旋轉</div>
         </div>
         <div class="img-wrapper">
-          <img src="https://rp-online.de/imgs/32/8/2/4/9/4/3/1/3/tok_3f330c125b7b8467cd2f1f240b0c52e6/w1300_h1281_x650_y640_AFP_fAFP_1QV4WY-d4ed51f6d3a99d9f.jpg" alt="GOFAST UFO 影片截圖" loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="img-caption">GOFAST 影片截圖 — 物體高速掠過海面</div>
+          <img src="https://rp-online.de/imgs/32/8/2/4/9/4/3/1/3/tok_3f330c125b7b8467cd2f1f240b0c52e6/w1300_h1281_x650_y640_AFP_fAFP_1QV4WY-d4ed51f6d3a99d9f.jpg" alt="GOFAST" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">GOFAST — 物體高速掠過海面</div>
         </div>
       </div>
     </div>
@@ -506,12 +738,12 @@
 
       <div class="image-gallery">
         <div class="img-wrapper">
-          <img src="https://assets2.cbsnewsstatic.com/hub/i/r/2023/07/26/ca1c19b7-c2f8-4796-a5c9-c7760901b986/thumbnail/1240x828/8ea0507efcf5a82d218e92b34e071912/gettyimages-1556765955.jpg" alt="2023國會UAP聽證會" loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="img-caption">David Grusch 在國會宣誓作證</div>
+          <img src="https://assets2.cbsnewsstatic.com/hub/i/r/2023/07/26/ca1c19b7-c2f8-4796-a5c9-c7760901b986/thumbnail/1240x828/8ea0507efcf5a82d218e92b34e071912/gettyimages-1556765955.jpg" alt="David Grusch作證" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">David Grusch 國會宣誓作證</div>
         </div>
         <div class="img-wrapper">
-          <img src="https://static01.nyt.com/images/2023/07/26/multimedia/26dc-ufos-01-vwmf/26dc-ufos-01-vwmf-jumbo.jpg?quality=75&auto=webp" alt="2023國會UAP聽證會全景" loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="img-caption">2023年眾議院 UAP 聽證會現場</div>
+          <img src="https://static01.nyt.com/images/2023/07/26/multimedia/26dc-ufos-01-vwmf/26dc-ufos-01-vwmf-jumbo.jpg?quality=75&auto=webp" alt="聽證會全景" loading="lazy" onclick="openLightbox(this.src)" onerror="this.parentElement.style.display='none'">
+          <div class="img-caption">眾議院 UAP 聽證會現場</div>
         </div>
       </div>
 
@@ -544,11 +776,12 @@
      <a href="https://www.defense.gov/" target="_blank">美國國防部</a> · 
      <a href="https://www.aaro.mil/" target="_blank">AARO</a> · 
      <a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV/UFO</a></p>
-  <p style="margin-top:10px;">本頁內容僅供資訊參考，基於美國政府公開資料彙編 | UFO 外星生態分析</p>
+  <p style="margin-top:10px;">本頁內容僅供資訊參考，基於美國政府公開資料彙編 | UFO 外星生態分析 | 最後更新 2026.08</p>
 </footer>
 
-<!-- ===== STARFIELD SCRIPT ===== -->
+<!-- ===== SCRIPTS ===== -->
 <script>
+// === STARFIELD ===
 (function() {
   var canvas = document.getElementById('stars-canvas');
   var ctx = canvas.getContext('2d');
@@ -587,6 +820,22 @@
   }
   draw();
 })();
+
+// === LIGHTBOX ===
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
 </script>
 
 </body>

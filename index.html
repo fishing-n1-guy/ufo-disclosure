@@ -3,371 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美國政府 UFO/UAP 披露檔案 — 完整檔案館</title>
+<title>美國政府 UFO/UAP 完整檔案館 — 解密·分類·事件·數據</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans HK',sans-serif;background:#0a0a0f;color:#c8d6e5;line-height:1.8;overflow-x:hidden}
-#stars-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+body{font-family:'Noto Sans HK',sans-serif;background:#0a0a0f;color:#c8d6e5;line-height:1.75;overflow-x:hidden}
+#sc{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+header{position:relative;z-index:1;text-align:center;padding:45px 20px 28px;background:linear-gradient(180deg,rgba(10,20,60,0.95) 0%,rgba(10,10,15,0.8) 100%)}
+header h1{font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,3.5vw,2.2rem);color:#00e5ff;text-shadow:0 0 30px rgba(0,229,255,0.5);letter-spacing:2px;margin-bottom:6px}
+header .sub{font-size:.85rem;color:#7f8fa6;letter-spacing:2px}
 
-/* ===== HEADER ===== */
-header{position:relative;z-index:1;text-align:center;padding:50px 20px 30px;background:linear-gradient(180deg,rgba(10,20,60,0.95) 0%,rgba(10,10,15,0.8) 100%)}
-header h1{font-family:'Orbitron',sans-serif;font-size:clamp(1.5rem,4vw,2.5rem);color:#00e5ff;text-shadow:0 0 30px rgba(0,229,255,0.5),0 0 60px rgba(0,229,255,0.2);letter-spacing:2px;margin-bottom:8px}
-header .subtitle{font-size:0.95rem;color:#7f8fa6;letter-spacing:2px}
+/* ===== NAV ===== */
+nav.tabs{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 8px;display:flex;flex-wrap:wrap;gap:3px;justify-content:center}
+nav.tabs button{font-family:'Noto Sans HK',sans-serif;font-size:.76rem;padding:9px 14px;background:rgba(15,15,30,0.7);border:1px solid rgba(0,229,255,0.12);color:#7f8fa6;cursor:pointer;border-radius:8px 8px 0 0;transition:all .3s;white-space:nowrap}
+nav.tabs button:hover{color:#00e5ff;border-color:rgba(0,229,255,0.3)}
+nav.tabs button.on{color:#00e5ff;border-color:#00e5ff;border-bottom-color:transparent;background:rgba(0,229,255,0.06);font-weight:700}
 
-/* ===== TABS ===== */
-nav.tabs{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 10px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
-nav.tabs button{font-family:'Noto Sans HK',sans-serif;font-size:.82rem;padding:10px 18px;background:rgba(15,15,30,0.7);border:1px solid rgba(0,229,255,0.15);color:#7f8fa6;cursor:pointer;border-radius:10px 10px 0 0;transition:all .3s;white-space:nowrap;letter-spacing:0.5px}
-nav.tabs button:hover{color:#00e5ff;border-color:rgba(0,229,255,0.4);background:rgba(0,229,255,0.05)}
-nav.tabs button.active{color:#00e5ff;border-color:#00e5ff;border-bottom-color:transparent;background:rgba(0,229,255,0.08);font-weight:700}
+.tcw{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:25px 18px;border-top:1px solid rgba(0,229,255,0.12)}
+.tp{display:none}.tp.on{display:block}
+.st{font-family:'Orbitron',sans-serif;font-size:1.3rem;color:#00e5ff;text-align:center;margin:0 0 25px;letter-spacing:2px}
+.sb{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:25px}
+.stc{text-align:center;padding:16px 10px;background:rgba(15,15,30,0.6);border:1px solid rgba(0,229,255,0.08);border-radius:10px}
+.stc .n{font-family:'Orbitron',sans-serif;font-size:1.6rem;color:#00e5ff;line-height:1}
+.stc .l{font-size:.7rem;color:#7f8fa6;margin-top:3px}
 
-/* ===== TAB CONTENT ===== */
-.tab-content-wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:30px 20px 10px;border-top:1px solid rgba(0,229,255,0.15)}
-.tab-page{display:none}
-.tab-page.active{display:block}
+/* ===== HOME ===== */
+.hi{max-width:750px;margin:0 auto 25px;text-align:center}
+.hi p{color:#a4b0be;font-size:.92rem;margin-bottom:10px}
+.hi strong{color:#f5f6fa}
+.hfg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:900px;margin:0 auto}
+.fc{padding:20px 16px;background:rgba(15,15,30,0.65);border:1px solid rgba(0,229,255,0.08);border-radius:12px;text-align:center;transition:transform .3s}
+.fc:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.25)}
+.fc .ic{font-size:1.8rem;margin-bottom:6px}
+.fc .ft{font-size:.85rem;color:#f5f6fa;font-weight:700;margin-bottom:4px}
+.fc .fd{font-size:.72rem;color:#7f8fa6}
 
-/* ===== COMMON COMPONENTS ===== */
-.section-title{font-family:'Orbitron',sans-serif;font-size:1.4rem;color:#00e5ff;text-align:center;margin:0 0 30px;letter-spacing:2px}
-.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:30px}
-.stat-card{text-align:center;padding:18px 10px;background:rgba(15,15,30,0.6);border:1px solid rgba(0,229,255,0.1);border-radius:12px}
-.stat-card .n{font-family:'Orbitron',sans-serif;font-size:1.8rem;color:#00e5ff;line-height:1}
-.stat-card .l{font-size:.75rem;color:#7f8fa6;margin-top:4px}
-
-/* ===== HOME TAB ===== */
-.home-intro{max-width:800px;margin:0 auto 30px;text-align:center}
-.home-intro p{color:#a4b0be;font-size:.95rem;margin-bottom:12px}
-.home-intro strong{color:#f5f6fa}
-.home-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:900px;margin:0 auto 30px}
-.feat-card{padding:22px 18px;background:rgba(15,15,30,0.7);border:1px solid rgba(0,229,255,0.1);border-radius:14px;text-align:center;transition:transform .3s}
-.feat-card:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.3)}
-.feat-card .icon{font-size:2rem;margin-bottom:8px}
-.feat-card .ft{font-size:.9rem;color:#f5f6fa;font-weight:700;margin-bottom:6px}
-.feat-card .fd{font-size:.78rem;color:#7f8fa6}
-
-/* ===== TIMELINE (Tab 2) ===== */
-.timeline-container{position:relative}
-.timeline-line{position:absolute;left:50%;transform:translateX(-50%);top:20px;bottom:0;width:2px;background:linear-gradient(180deg,rgba(0,229,255,0.4),rgba(0,229,255,0.05));z-index:0}
-.event{position:relative;display:flex;align-items:flex-start;margin-bottom:60px;z-index:1}
-.event:nth-child(odd){flex-direction:row}
-.event:nth-child(even){flex-direction:row-reverse}
-.event-dot{position:absolute;left:50%;transform:translateX(-50%);top:25px;width:16px;height:16px;background:#00e5ff;border-radius:50%;box-shadow:0 0 20px rgba(0,229,255,0.6);z-index:2}
-.event-body{width:45%;background:rgba(15,15,30,0.8);border:1px solid rgba(0,229,255,0.12);border-radius:16px;padding:28px;transition:transform .3s,border-color .3s;position:relative}
-.event-body:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.35)}
-.event:nth-child(odd) .event-body{margin-right:5%}
-.event:nth-child(even) .event-body{margin-left:5%}
-.event-num{font-family:'Orbitron',sans-serif;font-size:3rem;color:rgba(0,229,255,0.05);position:absolute;top:-10px;right:16px;pointer-events:none}
-.event-date{font-family:'Orbitron',sans-serif;font-size:.8rem;color:#00e5ff;letter-spacing:2px;margin-bottom:4px;opacity:.8}
-.event h2{font-size:1.35rem;color:#f5f6fa;margin-bottom:14px;line-height:1.4}
-.event h3{font-size:1rem;color:#00e5ff;margin:16px 0 6px}
-.event p{color:#a4b0be;font-size:.9rem;margin-bottom:8px}
-.event .hl-box{background:rgba(0,229,255,0.03);border-left:3px solid #00e5ff;padding:10px 14px;margin:12px 0;border-radius:0 6px 6px 0}
-.event .hl-box ul{list-style:none;padding:0}
-.event .hl-box ul li{padding:3px 0;padding-left:18px;position:relative;font-size:.88rem}
-.event .hl-box ul li::before{content:"▸";position:absolute;left:0;color:#00e5ff}
-.event .tag{display:inline-block;background:rgba(0,229,255,0.1);color:#00e5ff;padding:2px 10px;border-radius:10px;font-size:.7rem;margin:2px 4px 2px 0}
-.event table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.84rem}
-.event table td{padding:5px 8px;border-bottom:1px solid rgba(0,229,255,0.06)}
-.event table td:first-child{color:#00e5ff;white-space:nowrap;font-weight:700;width:30%}
-.event .imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:12px}
-.event .imgs .ic{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:16/10;background:rgba(0,0,0,0.3)}
-.event .imgs img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .4s}
-.event .imgs .ic:hover img{transform:scale(1.06)}
-.event .imgs .cap{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);color:#c8d6e5;font-size:.65rem;padding:3px 6px;text-align:center}
+/* ===== TIMELINE (Tab: disclosures) ===== */
+.tl{position:relative}.tl-line{position:absolute;left:50%;transform:translateX(-50%);top:10px;bottom:0;width:2px;background:linear-gradient(180deg,rgba(0,229,255,0.4),rgba(0,229,255,0.03));z-index:0}
+.ev{position:relative;display:flex;align-items:flex-start;margin-bottom:55px;z-index:1}
+.ev:nth-child(odd){flex-direction:row}.ev:nth-child(even){flex-direction:row-reverse}
+.ev-dot{position:absolute;left:50%;transform:translateX(-50%);top:22px;width:14px;height:14px;background:#00e5ff;border-radius:50%;box-shadow:0 0 18px rgba(0,229,255,0.55);z-index:2}
+.ev-b{width:45%;background:rgba(15,15,30,0.78);border:1px solid rgba(0,229,255,0.1);border-radius:14px;padding:26px;transition:transform .3s;position:relative}
+.ev-b:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.3)}
+.ev:nth-child(odd) .ev-b{margin-right:5%}.ev:nth-child(even) .ev-b{margin-left:5%}
+.ev-num{font-family:'Orbitron',sans-serif;font-size:2.8rem;color:rgba(0,229,255,0.04);position:absolute;top:-8px;right:14px;pointer-events:none}
+.ev-dt{font-family:'Orbitron',sans-serif;font-size:.75rem;color:#00e5ff;letter-spacing:1.5px;margin-bottom:3px;opacity:.8}
+.ev h2{font-size:1.25rem;color:#f5f6fa;margin-bottom:12px;line-height:1.35}
+.ev h3{font-size:.95rem;color:#00e5ff;margin:14px 0 5px}
+.ev p{color:#a4b0be;font-size:.88rem;margin-bottom:7px}
+.ev .hl{background:rgba(0,229,255,0.03);border-left:2px solid #00e5ff;padding:8px 12px;margin:10px 0;border-radius:0 5px 5px 0}
+.ev .hl ul{list-style:none;padding:0}.ev .hl ul li{padding:2px 0 2px 16px;position:relative;font-size:.84rem}.ev .hl ul li::before{content:"▸";position:absolute;left:0;color:#00e5ff}
+.ev .tg{display:inline-block;background:rgba(0,229,255,0.08);color:#00e5ff;padding:1px 9px;border-radius:8px;font-size:.68rem;margin:2px 3px 2px 0}
+.ev table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem}
+.ev table td{padding:4px 7px;border-bottom:1px solid rgba(0,229,255,0.05)}.ev table td:first-child{color:#00e5ff;font-weight:700;width:28%}
+.ev .ims{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;margin-top:10px}
+.ev .ims .ic{position:relative;border-radius:7px;overflow:hidden;aspect-ratio:16/10;background:rgba(0,0,0,0.3)}
+.ev .ims img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .4s}
+.ev .ims .ic:hover img{transform:scale(1.06)}
+.ev .ims .cap{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);color:#c8d6e5;font-size:.6rem;padding:2px 5px;text-align:center}
 
 /* ===== LINKS ===== */
-.vlink{display:inline-flex;align-items:center;gap:6px;color:#00e5ff;text-decoration:none;font-size:.82rem;margin-top:8px;padding:6px 14px;border:1px solid rgba(0,229,255,0.3);border-radius:16px;transition:all .3s}
-.vlink:hover{background:rgba(0,229,255,0.1);border-color:#00e5ff}
+.vl{display:inline-flex;align-items:center;gap:5px;color:#00e5ff;text-decoration:none;font-size:.78rem;margin-top:6px;padding:5px 12px;border:1px solid rgba(0,229,255,0.25);border-radius:14px;transition:all .3s}
+.vl:hover{background:rgba(0,229,255,0.08);border-color:#00e5ff}
 
-/* ===== PHOTO GRID (Tab 3) ===== */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-.pcard{background:rgba(15,15,30,0.8);border:1px solid rgba(0,229,255,0.1);border-radius:12px;overflow:hidden;transition:transform .3s}
-.pcard:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.35)}
-.pcard .pw{aspect-ratio:16/10;overflow:hidden;background:rgba(0,0,0,0.3)}
-.pcard img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .5s}
-.pcard:hover img{transform:scale(1.06)}
-.pcard .pi{padding:10px 14px}
-.pcard .pt{font-size:.85rem;color:#f5f6fa;font-weight:700;margin-bottom:2px}
-.pcard .ps{font-size:.68rem;color:#57606f}
-.pcard .ptag{display:inline-block;background:rgba(0,229,255,0.1);color:#00e5ff;padding:1px 8px;border-radius:8px;font-size:.65rem;margin-top:4px}
+/* ===== GRID CARDS ===== */
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:rgba(15,15,30,0.75);border:1px solid rgba(0,229,255,0.08);border-radius:12px;overflow:hidden;transition:transform .3s}
+.card:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.25)}
+.card .ci{aspect-ratio:16/10;overflow:hidden;background:rgba(0,0,0,0.3)}
+.card .ci img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .4s}
+.card:hover .ci img{transform:scale(1.06)}
+.card .cb{padding:16px}
+.card .cd{font-family:'Orbitron',sans-serif;font-size:.68rem;color:#00e5ff;letter-spacing:1px;margin-bottom:3px;opacity:.8}
+.card .ct{font-size:1rem;color:#f5f6fa;font-weight:700;margin-bottom:6px}
+.card .cx{font-size:.8rem;color:#a4b0be;line-height:1.6}
+.card .ctg{display:inline-block;background:rgba(0,229,255,0.08);color:#00e5ff;padding:1px 7px;border-radius:6px;font-size:.62rem;margin:2px 3px 0 0}
 
-/* ===== CLASSIC EVENTS (Tab 4) ===== */
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.ccard{background:rgba(15,15,30,0.8);border:1px solid rgba(0,229,255,0.1);border-radius:14px;overflow:hidden;transition:transform .3s}
-.ccard:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.3)}
-.ccard .ci{aspect-ratio:16/10;overflow:hidden;background:rgba(0,0,0,0.3)}
-.ccard .ci img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .4s}
-.ccard:hover .ci img{transform:scale(1.06)}
-.ccard .cb{padding:18px}
-.ccard .cd{font-family:'Orbitron',sans-serif;font-size:.72rem;color:#00e5ff;letter-spacing:1px;margin-bottom:4px;opacity:.8}
-.ccard .ct{font-size:1.05rem;color:#f5f6fa;font-weight:700;margin-bottom:8px}
-.ccard .cx{font-size:.84rem;color:#a4b0be;line-height:1.65}
-.ccard .ctag{display:inline-block;background:rgba(0,229,255,0.1);color:#00e5ff;padding:1px 8px;border-radius:8px;font-size:.65rem;margin:2px 3px 0 0}
+/* ===== TYPE TABLE ===== */
+.type-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:.84rem;background:rgba(15,15,30,0.5);border-radius:10px;overflow:hidden}
+.type-table thead th{background:rgba(0,229,255,0.1);color:#00e5ff;padding:10px 12px;text-align:left;font-weight:700;font-size:.8rem;letter-spacing:1px}
+.type-table td{padding:8px 12px;border-bottom:1px solid rgba(0,229,255,0.05)}
+.type-table td:first-child{color:#00e5ff;font-weight:700;white-space:nowrap}
+.type-table td:nth-child(2){color:#f5f6fa}
+.type-table td:nth-child(3){color:#a4b0be;font-size:.8rem}
 
-/* ===== FOLLOW-UP (Tab 5) ===== */
-.follow-box{max-width:800px;margin:0 auto;background:rgba(0,229,255,0.03);border:1px solid rgba(0,229,255,0.12);border-radius:16px;padding:28px}
-.follow-box h3{font-family:'Orbitron',sans-serif;color:#00e5ff;margin-bottom:14px}
-.follow-box p{color:#a4b0be;font-size:.9rem;margin-bottom:10px}
-.follow-box a{color:#00e5ff}
+/* ===== FOLLOW-UP ===== */
+.fubox{max-width:800px;margin:0 auto;background:rgba(0,229,255,0.02);border:1px solid rgba(0,229,255,0.1);border-radius:14px;padding:26px}
+.fubox h3{font-family:'Orbitron',sans-serif;color:#00e5ff;margin-bottom:12px;font-size:1rem}
+.fubox p{color:#a4b0be;font-size:.86rem;margin-bottom:8px}
+.fubox a{color:#00e5ff}
 
 /* ===== LIGHTBOX ===== */
 .lb{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.94);z-index:9999;justify-content:center;align-items:center;cursor:pointer}
-.lb.on{display:flex}
-.lb img{max-width:94vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 0 60px rgba(0,229,255,0.2)}
-.lb .x{position:absolute;top:16px;right:28px;color:#fff;font-size:2.5rem;cursor:pointer;z-index:10000;line-height:1}
+.lb.on{display:flex}.lb img{max-width:94vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 0 60px rgba(0,229,255,0.2)}
+.lb .x{position:absolute;top:16px;right:28px;color:#fff;font-size:2.5rem;cursor:pointer;z-index:10000}
 
-/* ===== FOOTER ===== */
-footer{position:relative;z-index:1;text-align:center;padding:30px 20px;border-top:1px solid rgba(0,229,255,0.08);color:#57606f;font-size:.78rem;margin-top:20px}
+footer{position:relative;z-index:1;text-align:center;padding:24px 20px;border-top:1px solid rgba(0,229,255,0.06);color:#57606f;font-size:.72rem;margin-top:15px}
 footer a{color:#00e5ff;text-decoration:none}
 
 @media(max-width:768px){
-  .timeline-line,.event-dot{display:none}
-  .event,.event:nth-child(odd),.event:nth-child(even){flex-direction:column}
-  .event-body,.event:nth-child(odd) .event-body,.event:nth-child(even) .event-body{width:100%;margin:0}
-  .event-num{display:none}
-  nav.tabs button{font-size:.72rem;padding:8px 12px}
-  .pgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
-  .cgrid{grid-template-columns:1fr}
+  .tl-line,.ev-dot{display:none}.ev,.ev:nth-child(odd),.ev:nth-child(even){flex-direction:column}
+  .ev-b,.ev:nth-child(odd) .ev-b,.ev:nth-child(even) .ev-b{width:100%;margin:0}.ev-num{display:none}
+  nav.tabs button{font-size:.68rem;padding:7px 10px}.grid2{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-<canvas id="stars-canvas"></canvas>
+<canvas id="sc"></canvas>
 <div class="lb" id="lb" onclick="clb()"><span class="x">&times;</span><img id="lbi" src="" alt=""></div>
 
-<!-- ===== HEADER ===== -->
-<header>
-  <h1>🛸 美國政府 UFO/UAP 完整檔案館</h1>
-  <div class="subtitle">解密文件 · 官方報告 · 國會聽證 · 經典事件 · 實拍影像</div>
-</header>
+<header><h1>🛸 美國政府 UFO/UAP 完整檔案館</h1><div class="sub">解密文件 · 官方報告 · 國會聽證 · 經典事件 · UFO分類學 · 數據統計</div></header>
 
-<!-- ===== NAV TABS ===== -->
-<nav class="tabs" id="navtabs">
-  <button class="active" data-tab="home">🏠 首頁概述</button>
-  <button data-tab="disclosures">📋 四大披露</button>
-  <button data-tab="gallery">📸 影像資料庫</button>
-  <button data-tab="events">🛸 經典事件</button>
-  <button data-tab="updates">🔭 最新動態</button>
+<nav class="tabs" id="nav">
+  <button class="on" data-t="home">🏠 總覽</button>
+  <button data-t="disclosures">📋 四大披露</button>
+  <button data-t="history">📜 調查歷史</button>
+  <button data-t="types">🔷 UFO分類</button>
+  <button data-t="events">🛸 經典事件</button>
+  <button data-t="gallery">📸 影像庫</button>
+  <button data-t="updates">📊 數據動態</button>
 </nav>
 
-<!-- ===== TAB CONTENT ===== -->
-<div class="tab-content-wrap">
+<div class="tcw">
 
-<!-- TAB 1: HOME -->
-<div class="tab-page active" id="tab-home">
-  <div class="home-intro">
-    <p>自<strong>2017年</strong>《紐約時報》首次揭露五角大樓秘密UFO計劃以來，美國政府從<strong>否認轉向公開</strong>，經歷了四次重大披露里程碑。本檔案館完整收錄美國政府公開的UFO/UAP文件、影片、報告及國會聽證記錄，並彙編全球經典UFO事件，<strong>全部翻譯為繁體中文</strong>。</p>
+<!-- ═══ TAB: HOME ═══ -->
+<div class="tp on" id="t-home">
+  <div class="hi"><p>自<strong>1947年</strong> Kenneth Arnold 目擊「飛碟」以來，美國政府從<strong>否認→秘密調查→逐步公開</strong>。本檔案館完整收錄從 <strong>Project Sign→Blue Book→AATIP→ODNI→AARO</strong> 的官方調查歷史、四大重大披露、UFO形態分類學、15+經典全球案例，全部繁體中文。</p></div>
+  <div class="sb">
+    <div class="stc"><div class="n">12,618</div><div class="l">BlueBook總報告數</div></div>
+    <div class="stc"><div class="n">701</div><div class="l">BlueBook未解釋</div></div>
+    <div class="stc"><div class="n">144</div><div class="l">ODNI首批個案</div></div>
+    <div class="stc"><div class="n">757</div><div class="l">AARO 2024新案</div></div>
+    <div class="stc"><div class="n">7</div><div class="l">UFO主要形狀</div></div>
+    <div class="stc"><div class="n">15+</div><div class="l">經典事件收錄</div></div>
   </div>
-
-  <div class="stats-bar">
-    <div class="stat-card"><div class="n">144+</div><div class="l">政府記錄UAP個案</div></div>
-    <div class="stat-card"><div class="n">143</div><div class="l">無法解釋個案</div></div>
-    <div class="stat-card"><div class="n">18</div><div class="l">異常飛行特徵</div></div>
-    <div class="stat-card"><div class="n">9</div><div class="l">經典UFO事件</div></div>
-    <div class="stat-card"><div class="n">20+</div><div class="l">實拍/解密圖片</div></div>
-  </div>
-
-  <div class="home-features">
-    <div class="feat-card"><div class="icon">📋</div><div class="ft">四大披露時間線</div><div class="fd">2017 AATIP → 2020 五角大樓解密 → 2021 ODNI報告 → 2023 國會聽證</div></div>
-    <div class="feat-card"><div class="icon">📸</div><div class="ft">影像資料庫</div><div class="fd">美軍紅外線影像、HUD錄影、WAR.GOV最新解密檔案</div></div>
-    <div class="feat-card"><div class="icon">🛸</div><div class="ft">經典UFO事件</div><div class="fd">羅斯威爾、鳳凰城光點、比利時浪潮、藍道申森林等9大事件</div></div>
-    <div class="feat-card"><div class="icon">🔭</div><div class="ft">最新動態</div><div class="fd">AARO年度報告、UAP披露法案、2026年PURSUE大規模解密</div></div>
+  <div class="hfg">
+    <div class="fc"><div class="ic">📋</div><div class="ft">四大披露</div><div class="fd">2017 AATIP→2020 解密→2021 ODNI→2023 聽證</div></div>
+    <div class="fc"><div class="ic">📜</div><div class="ft">官方調查史</div><div class="fd">Sign→Grudge→Blue Book→Condon→AATIP→AARO</div></div>
+    <div class="fc"><div class="ic">🔷</div><div class="ft">UFO型態分類</div><div class="fd">碟、三角、雪茄、球體、Tic Tac、飛鏢、橢圓</div></div>
+    <div class="fc"><div class="ic">🛸</div><div class="ft">15+經典事件</div><div class="fd">從Roswell到2019航母蜂群，全球代表性案例</div></div>
   </div>
 </div>
 
-<!-- TAB 2: FOUR DISCLOSURES -->
-<div class="tab-page" id="tab-disclosures">
-  <div class="section-title">📋 四大披露時間線</div>
-  <div class="timeline-container">
-    <div class="timeline-line"></div>
+<!-- ═══ TAB: DISCLOSURES ═══ -->
+<div class="tp" id="t-disclosures">
+  <div class="st">📋 四大披露時間線</div>
+  <div class="tl"><div class="tl-line"></div>
 
-    <!-- EVENT 1 -->
-    <div class="event"><div class="event-dot"></div>
-      <div class="event-body">
-        <div class="event-num">01</div>
-        <div class="event-date">2017 年 12 月 16 日</div>
-        <h2>《紐約時報》揭露 AATIP 秘密計劃<br>＋ 三段 UFO 影片首次曝光</h2>
-        <div class="tag">紐約時報</div><div class="tag">AATIP</div><div class="tag">外洩影片</div>
-        <h3>🔍 AATIP 秘密計劃</h3>
-        <p>美國國防部自<strong>2007年</strong>秘密運行「先進航空航天威脅識別計劃」(AATIP)，由參議員 Harry Reid 推動，<strong>耗資 $2,200萬美元</strong>。軍情官員 Luis Elizondo 領導，2017年10月辭職後公開批評政府過度保密。</p>
-        <h3>🛩️ 2004年尼米茲號「Tic Tac」遭遇</h3>
-        <p>普林斯頓號巡洋艦雷達偵測到不明物體在<strong>80,000英尺</strong>高空俯衝至海平面。指揮官 <strong>David Fravor</strong> 駕駛F/A-18F攔截，目擊<strong>12米長白色橢圓形</strong>無機翼無推進裝置物體；接近時物體「鏡像運動」後消失。武器官 <strong>Chad Underwood</strong> 以FLIR紅外線成功鎖定錄影。</p>
-        <table><tr><td>計劃經費</td><td>$22M USD（黑色預算）</td></tr><tr><td>關鍵人物</td><td>Harry Reid, Luis Elizondo, David Fravor</td></tr><tr><td>外洩影片</td><td>FLIR、GIMBAL、GOFAST</td></tr></table>
-        <div class="imgs">
-          <div class="ic"><img src="https://www.wowktv.com/wp-content/uploads/sites/52/2019/05/tic_tac_ufo_2_700_1556575988383_85062381_ver1.0_1280_720_1556670826340_85282481_ver1.0.jpg" alt="Tic Tac" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">FLIR「Tic Tac」紅外線影像</div></div>
-          <div class="ic"><img src="https://e3.365dm.com/23/07/1600x900/skynews-ufo-tic-tac-us-airforce_6231705.jpg?20230901093731" alt="模擬" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">五角大樓Tic Tac模擬圖</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- EVENT 2 -->
-    <div class="event"><div class="event-dot"></div>
-      <div class="event-body">
-        <div class="event-num">02</div>
-        <div class="event-date">2020 年 4 月 27 日</div>
-        <h2>五角大樓正式解密公開<br>三段 UFO 影片</h2>
-        <div class="tag">五角大樓</div><div class="tag">官方解密</div><div class="tag">歷史轉折</div>
-        <h3>📜 從否認到承認</h3>
-        <p>五角大樓<strong>正式解密並主動公開</strong>三段由海軍飛行員拍攝的UFO影片，確認2017年外洩影片真實性，代表美國政府首次官方承認UAP的存在。</p>
-        <h3>🎥 三段影片詳解</h3>
-        <table>
-          <tr><td>FLIR (Tic Tac)</td><td>2004年尼米茲號。12米白色橢圓形物體，無推進裝置，80,000ft俯衝至海平面。</td></tr>
-          <tr><td>GIMBAL</td><td>2015年羅斯福號。碟形物體在強風中旋轉，飛行員驚呼「Look at that thing!」</td></tr>
-          <tr><td>GOFAST</td><td>2015年。物體在海面上方極高速掠過，「What the f*** is that?!」</td></tr>
-        </table>
-        <p>發言人 Sue Gough：「影片中的空中現象仍被歸類為『不明』。」</p>
-        <a class="vlink" href="https://www.youtube.com/watch?v=oIN4BOzN-DI" target="_blank">🎬 觀看三段完整影片 ▶</a>
-        <div class="imgs">
-          <div class="ic"><img src="https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_VMS/28/227/gimbal_edit_final-converted_HD.jpg" alt="GIMBAL" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">GIMBAL — 碟形物體旋轉</div></div>
-          <div class="ic"><img src="https://rp-online.de/imgs/32/8/2/4/9/4/3/1/3/tok_3f330c125b7b8467cd2f1f240b0c52e6/w1300_h1281_x650_y640_AFP_fAFP_1QV4WY-d4ed51f6d3a99d9f.jpg" alt="GOFAST" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">GOFAST — 高速掠過海面</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- EVENT 3 -->
-    <div class="event"><div class="event-dot"></div>
-      <div class="event-body">
-        <div class="event-num">03</div>
-        <div class="event-date">2021 年 6 月 25 日</div>
-        <h2>ODNI 首份 UAP 初步評估報告<br>144 宗個案 · 143 宗無法解釋</h2>
-        <div class="tag">ODNI</div><div class="tag">情報界</div><div class="tag">9頁報告</div>
-        <h3>📊 報告背景</h3>
-        <p>參議院情報委員會強制要求ODNI在180天內提交UAP綜合報告。2021年6月25日發布<strong>9頁</strong>《不明空中現象初步評估報告》— 美國情報界<strong>首次官方UAP綜合報告</strong>。</p>
-        <h3>📈 核心數據</h3>
-        <table>
-          <tr><td>分析範圍</td><td>2004年11月–2021年3月（17年）</td></tr>
-          <tr><td>總個案</td><td>144宗（全來自美國軍方）</td></tr>
-          <tr><td>多傳感器</td><td>80宗（雷達+紅外線+目視）</td></tr>
-          <tr><td>無法解釋</td><td>143宗（99.3%）</td></tr>
-          <tr><td>唯一可辨識</td><td>1宗：洩氣大型氣球</td></tr>
-          <tr><td>異常飛行</td><td>18宗：逆風靜止、突然變向、極高速、無推進</td></tr>
-          <tr><td>近距接觸</td><td>11宗：飛行員通報險些相撞</td></tr>
-          <tr><td>射頻能量</td><td>部分UAP被偵測到釋放射頻</td></tr>
-        </table>
-        <h3>🔬 五大解釋類別</h3>
-        <div class="hl-box"><ul><li><strong>空中雜物</strong>：鳥類、氣球、無人機</li><li><strong>自然大氣現象</strong>：冰晶、等離子體</li><li><strong>美國機密計劃</strong>：未公開先進技術</li><li><strong>外國對手</strong>：中、俄突破性技術</li><li><strong>其他（無法歸類）</strong></li></ul></div>
-        <p>結論：「目前沒有明確跡象顯示具非地球來源，但將持續追查。」</p>
-        <a class="vlink" href="https://www.dni.gov/files/ODNI/documents/assessments/Prelimary-Assessment-UAP-20210625.pdf" target="_blank">📄 下載ODNI報告全文 (PDF) ▶</a>
-      </div>
-    </div>
-
-    <!-- EVENT 4 -->
-    <div class="event"><div class="event-dot"></div>
-      <div class="event-body">
-        <div class="event-num">04</div>
-        <div class="event-date">2023 年 7 月 26 日</div>
-        <h2>國會歷史性 UAP 聽證會<br>前情報官：政府隱瞞非人類技術</h2>
-        <div class="tag">國會聽證</div><div class="tag">告密者</div><div class="tag">非人類生物</div>
-        <h3>🏛️ 歷史性一刻</h3>
-        <p>眾議院監督委員會舉行<strong>歷史性UAP公開聽證會</strong>，三名證人宣誓作證。</p>
-        <h3>👤 證人證詞</h3>
-        <table>
-          <tr><td>David Grusch<br><small>前空軍情報官</small></td><td>⚠️ 指控政府自1930年代起進行<strong>數十年UFO逆向工程</strong>，回收<strong>非人類飛行器</strong>、取得<strong>非人類生物遺骸(non-human biologics)</strong>。基於40多名內部知情者訪談及機密文件。</td></tr>
-          <tr><td>Ryan Graves<br><small>前F/A-18F飛行員</small></td><td>在大西洋<strong>幾乎每日目擊UAP</strong>，描述為「深灰色立方體包裹在透明球體中」，能在強風中靜止。</td></tr>
-          <tr><td>David Fravor<br><small>前海軍指揮官</small></td><td>親述2004年Tic Tac目擊：物體技術<strong>遠超人類能力</strong>，政府多年視而不見。</td></tr>
-        </table>
-        <h3>📜 後續</h3>
-        <p>Grusch證詞促使國會推動<strong>《2024年UAP披露法案》</strong>，要求設立總統級審查委員會強制解密所有UAP檔案。</p>
-        <a class="vlink" href="https://www.youtube.com/watch?v=KQ7DwZ0oBSY" target="_blank">🎬 聽證會完整錄影 ▶</a>
-        <div class="imgs">
-          <div class="ic"><img src="https://assets2.cbsnewsstatic.com/hub/i/r/2023/07/26/ca1c19b7-c2f8-4796-a5c9-c7760901b986/thumbnail/1240x828/8ea0507efcf5a82d218e92b34e071912/gettyimages-1556765955.jpg" alt="Grusch" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">David Grusch國會宣誓作證</div></div>
-          <div class="ic"><img src="https://static01.nyt.com/images/2023/07/26/multimedia/26dc-ufos-01-vwmf/26dc-ufos-01-vwmf-jumbo.jpg?quality=75&auto=webp" alt="Hearing" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">眾議院UAP聽證會全景</div></div>
-        </div>
-      </div>
+  <!-- EVENT 1 -->
+  <div class="ev"><div class="ev-dot"></div>
+    <div class="ev-b"><div class="ev-num">01</div><div class="ev-dt">2017.12.16</div>
+      <h2>《紐約時報》揭露 AATIP ＋ 三段影片曝光</h2>
+      <div class="tg">NYT</div><div class="tg">AATIP</div><div class="tg">外洩</div>
+      <h3>🔍 AATIP 秘密計劃</h3>
+      <p>2007年起國防部秘密運行「先進航空航天威脅識別計劃」，由參議員 Harry Reid 推動，<strong>$22M經費</strong>。Luis Elizondo 領導至2017年10月辭職後公開批評政府隱瞞。</p>
+      <h3>🛩️ 2004年尼米茲號「Tic Tac」</h3>
+      <p>普林斯頓號雷達偵測物體從<strong>80,000ft俯衝至海平面</strong>。指揮官 <strong>David Fravor</strong> 駕駛F/A-18F攔截，目擊<strong>12米白色橢圓</strong>無推進裝置物體；接近時物體「鏡像運動」消失。武器官 <strong>Chad Underwood</strong> 以FLIR紅外線鎖定錄影。</p>
+      <table><tr><td>經費</td><td>$22M USD</td></tr><tr><td>關鍵人物</td><td>Reid, Elizondo, Fravor</td></tr><tr><td>影片</td><td>FLIR, GIMBAL, GOFAST</td></tr></table>
+      <div class="ims"><div class="ic"><img src="https://www.wowktv.com/wp-content/uploads/sites/52/2019/05/tic_tac_ufo_2_700_1556575988383_85062381_ver1.0_1280_720_1556670826340_85282481_ver1.0.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">FLIR「Tic Tac」</div></div><div class="ic"><img src="https://e3.365dm.com/23/07/1600x900/skynews-ufo-tic-tac-us-airforce_6231705.jpg?20230901093731" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">Tic Tac模擬圖</div></div></div>
     </div>
   </div>
-</div>
 
-<!-- TAB 3: PHOTO GALLERY -->
-<div class="tab-page" id="tab-gallery">
-  <div class="section-title">📸 解密 UFO/UAP 影像資料庫</div>
-  <div class="pgrid">
-    <div class="pcard"><div class="pw"><img src="https://media.defense.gov/2008/Jun/26/2000697153/1200/1200/0/080626-F-1234S-001.JPG" alt="飛碟" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🛸 空軍解密「飛碟」設計圖</div><div class="ps">U.S. Air Force</div><div class="ptag">1950s</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://image.cnbcfm.com/api/v1/image/106509330-1588069334820usnavyufo2.png?v=1588071060&w=1920&h=1080" alt="海軍" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🎯 海軍飛行員拍攝不明物體</div><div class="ps">U.S. Navy / CNBC</div><div class="ptag">海軍解密</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://media.cnn.com/api/v1/images/stellar/prod/180313050904-navy-ufo-encounter.jpg?q=x_2,y_0,h_1078,w_1915,c_crop/w_1280" alt="F18" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🛩️ F/A-18戰機UFO遭遇</div><div class="ps">CNN / 美國國防部</div><div class="ptag">紅外線</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://static01.nyt.com/images/2019/05/28/video/00DC-UFO-vid/00DC-UFO-vid-videoSixteenByNine1050-v2.jpg" alt="NYT" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">📡 「Wow, What Is That?」</div><div class="ps">New York Times</div><div class="ptag">飛行員證詞</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://ichef.bbci.co.uk/news/1024/branded_news/63DE/production/_99266552_p05rhx6s.jpg" alt="BBC" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🔍 戰機HUD捕捉UFO</div><div class="ps">BBC News / DoD</div><div class="ptag">HUD錄影</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2021/04/1200/675/UFO2.jpg" alt="三角" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🔺 三角型UAP夜視影像</div><div class="ps">Fox News / DoD</div><div class="ptag">夜視</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://static.foxnews.com/foxnews.com/content/uploads/2026/05/uap_fbi_dow.jpg" alt="WAR" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">📂 2026 WAR.GOV大解密</div><div class="ps">Fox News / WAR.GOV</div><div class="ptag">2026最新</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://a57.foxnews.com/cf-images.us-east-1.prod.boltdns.net/v1/static/694940094001/033b0fb6-3b24-44a8-802c-e90d8ff37d20/81d239c2-d8b4-4478-a670-ecad222bb2ed/1280x720/match/896/500/image.jpg?ve=1&tl=1" alt="F16" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🎥 F-16拍攝UAP影片</div><div class="ps">Fox News / WAR.GOV</div><div class="ptag">2026解密</div></div></div>
-    <div class="pcard"><div class="pw"><img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/1200/675/ufo-spaceship-fbi-investigation-fox-news-001-scaled.jpeg?ve=1&tl=1" alt="FBI" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.parentElement.style.display='none'"></div><div class="pi"><div class="pt">🕵️ FBI機密UFO檔案</div><div class="ps">Fox News / WAR.GOV</div><div class="ptag">2026解密</div></div></div>
+  <!-- EVENT 2 -->
+  <div class="ev"><div class="ev-dot"></div>
+    <div class="ev-b"><div class="ev-num">02</div><div class="ev-dt">2020.04.27</div>
+      <h2>五角大樓正式解密三段 UFO 影片</h2>
+      <div class="tg">DoD</div><div class="tg">解密</div><div class="tg">官方承認</div>
+      <h3>📜 歷史轉折</h3>
+      <p>五角大樓<strong>正式解密並主動公開</strong>三段UFO影片，確認2017年外洩影片真實性，代表美軍首次官方承認UAP。</p>
+      <table><tr><td>FLIR (Tic Tac)</td><td>2004尼米茲號，12m白色橢圓，80,000ft俯衝</td></tr><tr><td>GIMBAL</td><td>2015羅斯福號，碟形物體強風中旋轉，「Look at that thing!」</td></tr><tr><td>GOFAST</td><td>2015海面上方極高速掠過，「What the f*** is that?!」</td></tr></table>
+      <p>Sue Gough：「空中現象仍被歸類為『不明』。」</p>
+      <a class="vl" href="https://www.youtube.com/watch?v=oIN4BOzN-DI" target="_blank">🎬 三段完整影片 ▶</a>
+      <div class="ims"><div class="ic"><img src="https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_VMS/28/227/gimbal_edit_final-converted_HD.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">GIMBAL</div></div><div class="ic"><img src="https://rp-online.de/imgs/32/8/2/4/9/4/3/1/3/tok_3f330c125b7b8467cd2f1f240b0c52e6/w1300_h1281_x650_y640_AFP_fAFP_1QV4WY-d4ed51f6d3a99d9f.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">GOFAST</div></div></div>
+    </div>
+  </div>
+
+  <!-- EVENT 3 -->
+  <div class="ev"><div class="ev-dot"></div>
+    <div class="ev-b"><div class="ev-num">03</div><div class="ev-dt">2021.06.25</div>
+      <h2>ODNI 首份 UAP 評估報告<br>144宗 · 143無法解釋</h2>
+      <div class="tg">ODNI</div><div class="tg">情報界</div><div class="tg">9頁</div>
+      <h3>📊 核心數據</h3>
+      <table><tr><td>分析範圍</td><td>2004.11–2021.03（17年）</td></tr><tr><td>總個案</td><td>144宗（全軍方）</td></tr><tr><td>多傳感器</td><td>80宗（雷達+紅外線+目視）</td></tr><tr><td>無法解釋</td><td>143宗（99.3%）</td></tr><tr><td>異常飛行</td><td>18宗：逆風靜止、突然變向、極高速、無推進</td></tr><tr><td>近距接觸</td><td>11宗飛行員通報險些相撞</td></tr><tr><td>射頻能量</td><td>部分UAP釋放射頻</td></tr><tr><td>解析度</td><td>1宗：洩氣大氣球</td></tr></table>
+      <h3>🔬 五類解釋</h3>
+      <div class="hl"><ul><li>空中雜物（鳥、氣球、無人機）</li><li>自然大氣現象（冰晶、等離子體）</li><li>美國機密計劃</li><li>外國對手（中/俄）</li><li><strong>其他（無法歸類）</strong></li></ul></div>
+      <p>結論：「無明確非地球來源證據，但將持續追查。」</p>
+      <a class="vl" href="https://www.dni.gov/files/ODNI/documents/assessments/Prelimary-Assessment-UAP-20210625.pdf" target="_blank">📄 ODNI報告PDF ▶</a>
+    </div>
+  </div>
+
+  <!-- EVENT 4 -->
+  <div class="ev"><div class="ev-dot"></div>
+    <div class="ev-b"><div class="ev-num">04</div><div class="ev-dt">2023.07.26</div>
+      <h2>國會歷史性 UAP 聽證會<br>Grusch：政府隱瞞非人類技術</h2>
+      <div class="tg">國會</div><div class="tg">告密者</div><div class="tg">爆炸性</div>
+      <table><tr><td>David Grusch<br><small>前空軍情報官</small></td><td>⚠️ 指控政府自1930年代起進行<strong>數十年UFO逆向工程</strong>，回收<strong>非人類飛行器</strong>、取得<strong>non-human biologics</strong>。基於40+知情者訪談及機密文件。同事遭政府「人身威脅」。</td></tr><tr><td>Ryan Graves<br><small>前F/A-18F飛行員</small></td><td><strong>幾乎每日目擊</strong>UAP，描述為「深灰色立方體包裹在透明球體中」，強風中靜止。</td></tr><tr><td>David Fravor<br><small>前海軍指揮官</small></td><td>Tic Tac目擊：技術<strong>遠超人類能力</strong>，政府多年視而不見。</td></tr></table>
+      <p>Grusch證詞促使國會推動《<strong>2024年UAP披露法案</strong>》，強制設立總統級解密審查委員會。</p>
+      <a class="vl" href="https://www.youtube.com/watch?v=KQ7DwZ0oBSY" target="_blank">🎬 聽證會錄影 ▶</a>
+      <div class="ims"><div class="ic"><img src="https://assets2.cbsnewsstatic.com/hub/i/r/2023/07/26/ca1c19b7-c2f8-4796-a5c9-c7760901b986/thumbnail/1240x828/8ea0507efcf5a82d218e92b34e071912/gettyimages-1556765955.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">Grusch宣誓</div></div><div class="ic"><img src="https://static01.nyt.com/images/2023/07/26/multimedia/26dc-ufos-01-vwmf/26dc-ufos-01-vwmf-jumbo.jpg?quality=75&auto=webp" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"><div class="cap">聽證會全景</div></div></div>
+    </div>
+  </div>
   </div>
 </div>
 
-<!-- TAB 4: CLASSIC EVENTS -->
-<div class="tab-page" id="tab-events">
-  <div class="section-title">🛸 經典 UFO 事件檔案（共 9 宗）</div>
-  <div class="cgrid">
-
-    <!-- Roswell -->
-    <div class="ccard"><div class="ci"><img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RS7SWNXWFQI6ZAO3VQD2HFFINM.jpg&w=1200" alt="Roswell" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1947 年 7 月</div><div class="ct">🛸 羅斯威爾事件 (Roswell)</div><div class="cx">新墨西哥州牧場發現不明殘骸。軍方先發佈「尋獲飛碟」，數小時後改口「氣象氣球」。1994年空軍承認實為「莫古爾計劃」核爆監測氣球。史上最著名UFO傳說。</div><div class="ctag">新墨西哥</div><div class="ctag">1947</div></div></div>
-
-    <!-- Battle of LA -->
-    <div class="ccard"><div class="ci"><img src="https://ca-times.brightspotcdn.com/dims4/default/8afe036/2147483647/strip/true/crop/2048x1152+0+0/resize/840x473!/quality/90/?url=https://ca-times.brightspotcdn.com/fe/44/6d12495a542fad10121f7f51c4ac/la-1487694876-rb6w8i2yrn-snap-photo" alt="LA" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1942 年 2 月 24-25 日</div><div class="ct">🔫 洛杉磯之戰</div><div class="cx">二戰期間洛杉磯上空出現不明物體，美軍發射<strong>1,400+發防空砲彈</strong>。標誌性「搜索燈照片」成為UFO史上最具代表性的影像之一。</div><div class="ctag">洛杉磯</div><div class="ctag">1942</div></div></div>
-
-    <!-- Rendlesham -->
-    <div class="ccard"><div class="ci"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/15219/production/_116235568_gettyimages-953887854.jpg" alt="Rendlesham" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1980 年 12 月</div><div class="ct">🌲 藍道申森林事件</div><div class="cx">「英國的羅斯威爾」。美軍基地人員連續三晚目擊神秘光芒和疑似三角型飛行器降落在森林中。副基地司令 Halt 中校親筆撰寫備忘錄並錄音記錄。</div><div class="ctag">英國</div><div class="ctag">美軍基地</div></div></div>
-
-    <!-- Belgium Wave -->
-    <div class="ccard"><div class="ci"><img src="https://assets.editorial.aetnd.com/uploads/2017/07/the-belgium-wave-ufo.jpg?width=2048&height=1161&crop=2048:1161,smart&quality=75" alt="Belgium" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1989 年 11 月 – 1990 年 4 月</div><div class="ct">🔺 比利時 UFO 浪潮</div><div class="cx">大型黑色三角型UFO遍佈比利時。空軍出動<strong>F-16</strong>攔截，雷達鎖定目標但物體展現超凡機動 — 瞬間280→1,800 km/h加速。軍方罕見地主動公開雷達數據和調查報告。</div><div class="ctag">比利時</div><div class="ctag">F-16雷達</div></div></div>
-
-    <!-- Phoenix Lights -->
-    <div class="ccard"><div class="ci"><img src="https://allthatsinteresting.com/wordpress/wp-content/uploads/2021/02/cleaned-up-phoenix-lights-photo.jpg" alt="Phoenix" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1997 年 3 月 13 日</div><div class="ct">💡 鳳凰城光點事件</div><div class="cx">數千名亞利桑那州居民（包括時任州長<strong>Fife Symington</strong>）目擊巨型V型光點編隊無聲飛過，跨度<strong>480公里</strong>。州長多年後承認「那不是人類技術」。</div><div class="ctag">亞利桑那</div><div class="ctag">萬人目擊</div></div></div>
-
-    <!-- Chicago O'Hare 2006 -->
-    <div class="ccard"><div class="ci"><img src="https://i.dailymail.co.uk/1s/2023/08/31/17/74927575-0-image-a-3_1693499820525.jpg" alt="OHare" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2006 年 11 月 7 日</div><div class="ct">✈️ 芝加哥 O'Hare 機場 UFO</div><div class="cx">12名聯合航空員工（機師、督導、機械師）目擊<strong>碟形UFO</strong>在登機門C17上方<strong>完全無聲</strong>地懸浮，直徑約7-27米。物體突然垂直加速穿透雲層消失。FAA拒絕調查，至今未解。</div><div class="ctag">機場</div><div class="ctag">12目擊者</div></div></div>
-
-    <!-- Stephenville 2008 -->
-    <div class="ccard"><div class="ci"><img src="https://static.toiimg.com/thumb/imgsize-51100,msid-107431502,width-600,height-335,resizemode-75/107431502.jpg" alt="Stephenville" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2008 年 1 月 8 日</div><div class="ct">🤠 史蒂芬維爾 UFO 事件</div><div class="cx">德州數十名居民（包括機師、警察）目擊<strong>長達1.6公里的巨型物體</strong>被戰機追擊。軍方最初否認有飛機在該區，14小時後改口承認F-16曾出動。FAA雷達數據透過FOIA公開後確認不明物體存在。</div><div class="ctag">德州</div><div class="ctag">雷達確認</div></div></div>
-
-    <!-- Aguadilla 2013 -->
-    <div class="ccard"><div class="ci"><img src="https://www.ufoinsight.com/wp-content/uploads/2019/08/Aguadilla-Main-Underwater-UFO.jpg" alt="Aguadilla" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2013 年 4 月 26 日</div><div class="ct">🌊 阿瓜迪亞 UFO 事件</div><div class="cx">美國海關及邊境保護局（CBP）飛機的<strong>紅外線熱像儀</strong>在波多黎各機場上空拍到不明物體，該物體曾<strong>潛入水中又飛出</strong>，展現跨介質（空中↔水下）移動能力。AARO 2024年報告歸因於「熱燈籠」，但仍有爭議。</div><div class="ctag">波多黎各</div><div class="ctag">紅外線</div></div></div>
-
-    <!-- 2019 Navy Swarm -->
-    <div class="ccard"><div class="ci"><img src="https://www.the-sun.com/wp-content/uploads/sites/6/2020/01/CM-COMP-PILOT-1.jpg?strip=all&quality=100&w=1500&h=1000&crop=1" alt="Swarm" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2019 年 7 月</div><div class="ct">🚢 美軍航母 UFO 蜂群事件</div><div class="cx">2019年夏天，多艘美軍戰艦（包括驅逐艦）在南加州外海被<strong>至少100架不明飛行物</strong>「蜂群式」包圍數週。海軍船員向紀錄片導演 Jeremy Corbell 透露物體展現「無法解釋的能力」。軍方後稱是「無人機」，但多名目擊者質疑此說法。</div><div class="ctag">海軍</div><div class="ctag">蜂群</div></div></div>
-
+<!-- ═══ TAB: HISTORY ═══ -->
+<div class="tp" id="t-history">
+  <div class="st">📜 美國政府 UFO 調查史（1947–至今）</div>
+  <div class="grid2">
+    <div class="card"><div class="ci"><img src="https://cdn.britannica.com/46/111346-004-4A1680F2/cover-Kenneth-Arnold-The-Flying-Saucer.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1947.06.24</div><div class="ct">🛩️ Kenneth Arnold 目擊</div><div class="cx">飛行員 Arnold 在華盛頓州目擊9個新月形物體以<strong>1,900km/h</strong>飛行。他形容物體「像碟子在水面彈跳」—「<strong>飛碟（Flying Saucer）</strong>」一詞由此誕生，揭開現代UFO時代序幕。</div><div class="ctg">起源</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1947–1949</div><div class="ct">📁 Project Sign</div><div class="cx">空軍首個官方UFO調查項目。1948年「<strong>Estimate of the Situation</strong>」內部報告推斷UFO可能來自外星，但被參謀長否定並銷毀。後改組為Project Grudge。</div><div class="ctg">空軍</div><div class="ctg">機密</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1949–1952</div><div class="ct">📁 Project Grudge</div><div class="cx">延續Sign但帶有貶損立場，旨在「減輕公眾焦慮」，將大多數目擊歸因於誤認。政策重心從<strong>調查轉向公關</strong>，受到UFO研究者批評。</div><div class="ctg">空軍</div><div class="ctg">公關導向</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1952.03–1969.12</div><div class="ct">📘 Project Blue Book</div><div class="cx">空軍史上最長、最知名UFO項目。收集<strong>12,618宗</strong>報告，其中<strong>701宗（5.6%）</strong>無法解釋。總部設於Wright-Patterson空軍基地，由Edward Ruppelt上尉（1952-1953）領導期間最科學化。1969年Condon委員會建議終止，Blue Book正式關閉。</div><div class="ctg">空軍</div><div class="ctg">12,618案</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1966–1968</div><div class="ct">🔬 Condon 委員會</div><div class="cx">空軍資助科羅拉多大學物理學家 Edward Condon 領導的獨立研究。1969年發表<strong>《不明飛行物科學研究》</strong>，結論：「<strong>UFO進一步研究無科學價值</strong>。」此結論備受爭議，但直接導致Blue Book終止。</div><div class="ctg">學術</div><div class="ctg">爭議</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">2007–2017</div><div class="ct">🕵️ AATIP</div><div class="cx">五角大樓秘密UFO計劃，由Harry Reid推動，<strong>$22M</strong>經費。直到2017年NYT揭露才公諸於世。Luis Elizondo為關鍵人物。</div><div class="ctg">DoD</div><div class="ctg">黑色預算</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">2020–2022</div><div class="ct">📋 UAPTF</div><div class="cx">不明空中現象專案小組，設於海軍情報辦公室，標準化UAP收集報告。2021年ODNI報告即由UAPTF彙編。</div><div class="ctg">海軍</div><div class="ctg">過渡</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">2022.07–至今</div><div class="ct">🏛️ AARO</div><div class="cx">全域異常解決辦公室（All-domain Anomaly Resolution Office），<strong>永久性UAP調查機構</strong>。首任主任Sean Kirkpatrick。發布年度報告，2024年涵蓋757+新案。持續運行至今。</div><div class="ctg">DoD</div><div class="ctg">現行</div></div></div>
   </div>
 </div>
 
-<!-- TAB 5: UPDATES -->
-<div class="tab-page" id="tab-updates">
-  <div class="section-title">🔭 後續發展與最新動態</div>
-  <div class="follow-box">
-    <h3>📅 關鍵時間線</h3>
-    <p><strong>2022年7月</strong> — 國防部成立 <strong>AARO</strong>（全域異常解決辦公室），由 Sean Kirkpatrick 博士領導，取代臨時的UAPTF，成為永久性UAP調查機構。</p>
-    <p><strong>2023–2024年</strong> — AARO 發布多份年度報告。2023年報告涵蓋超過 <strong>800+</strong> 宗UAP報告。國會通過《<strong>UAP 披露法案</strong>》，要求設立總統級審查委員會，強制逐步解密所有UAP相關檔案。</p>
-    <p><strong>2024年11月</strong> — 第二次國會UAP聽證會舉行，AARO 主任作證，但未有如2023年般的爆炸性新證詞。焦點轉向改善軍事UAP報告機制。</p>
-    <p><strong>2026年5月</strong> — 川普政府啟動「<strong>PURSUE</strong>」大規模解密計劃，在 <a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV/UFO</a> 公開數十年累積的機密檔案，包括：軍方備忘錄、阿波羅任務UFO目擊報告、FBI/CIA調查檔案、飛行員第一手紀錄等。首批Release 01-04已上線。</p>
+<!-- ═══ TAB: UFO TYPES ═══ -->
+<div class="tp" id="t-types">
+  <div class="st">🔷 UFO 形狀分類學</div>
+  <p style="text-align:center;color:#7f8fa6;font-size:.88rem;margin-bottom:20px">根據數十年目擊報告歸納的七大主要UFO形狀類別</p>
+  <table class="type-table">
+    <thead><tr><th>形狀</th><th>描述</th><th>經典案例</th></tr></thead>
+    <tr><td>🛸 碟形 (Disc/Saucer)</td><td>最經典的「飛碟」形狀，扁平圓盤狀。通常無聲懸浮，可高速移動。</td><td>Kenneth Arnold 1947、Roswell 1947、O'Hare 2006</td></tr>
+    <tr><td>🔺 三角形 (Triangle/Delta)</td><td>大型黑色三角型，三角落常有燈光。無聲低速飛行，近年最常見形狀之一。</td><td>比利時浪潮 1989-90、鳳凰城光點 1997、Stephenville 2008</td></tr>
+    <tr><td>💊 Tic Tac</td><td>白色橢圓/膠囊形，無機翼無推進裝置。表面光滑如薄荷糖。</td><td>尼米茲號 2004（最著名）</td></tr>
+    <tr><td>🚬 雪茄形 (Cigar/Cylinder)</td><td>長條圓柱體，有時被描述為「母艦」，曾有報告指小型球體從中進出。</td><td>Yukon 1967、多宗高空目擊</td></tr>
+    <tr><td>🔵 球體/光球 (Orb/Sphere)</td><td>發光球體，大小從網球到汽車不等。可單獨或成群出現。</td><td>2019航母蜂群、Aguadilla 2013</td></tr>
+    <tr><td>🔸 菱形/飛鏢 (Diamond/Boomerang)</td><td>菱形或V形飛行器，通常大型且擁有均勻分佈的燈光。</td><td>鳳凰城光點第一波（V型）</td></tr>
+    <tr><td>🥚 橢圓/蛋形 (Oval/Egg)</td><td>類似Tic Tac但較圓潤的蛋形物體，表面光滑無特徵。</td><td>多宗軍事飛行員目擊報告</td></tr>
+  </table>
+  <p style="text-align:center;color:#57606f;font-size:.78rem;margin-top:15px">資料來源：New Space Economy 分類研究、AARO 報告、MUFON 數據庫</p>
+</div>
 
-    <h3 style="margin-top:20px">🔗 官方資源連結</h3>
-    <p><a href="https://www.aaro.mil/" target="_blank">AARO 官方網站</a> — 國防部UAP調查辦公室</p>
-    <p><a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV/UFO</a> — 2026年PURSUE大規模解密平台</p>
-    <p><a href="https://www.dni.gov/" target="_blank">ODNI</a> — 國家情報總監辦公室（2021年報告發佈方）</p>
+<!-- ═══ TAB: CLASSIC EVENTS ═══ -->
+<div class="tp" id="t-events">
+  <div class="st">🛸 經典全球 UFO 事件檔案（15 宗）</div>
+  <div class="grid2">
+    <div class="card"><div class="ci"><img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RS7SWNXWFQI6ZAO3VQD2HFFINM.jpg&w=1200" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1947.07</div><div class="ct">🛸 羅斯威爾 (Roswell)</div><div class="cx">新墨西哥州牧場發現不明殘骸。軍方先稱「飛碟」後改口「氣球」。1994年承認是核監測氣球。UFO文化奠基石。</div><div class="ctg">美國</div><div class="ctg">標誌性</div></div></div>
+    <div class="card"><div class="ci"><img src="https://ca-times.brightspotcdn.com/dims4/default/8afe036/2147483647/strip/true/crop/2048x1152+0+0/resize/840x473!/quality/90/?url=https://ca-times.brightspotcdn.com/fe/44/6d12495a542fad10121f7f51c4ac/la-1487694876-rb6w8i2yrn-snap-photo" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1942.02.24-25</div><div class="ct">🔫 洛杉磯之戰</div><div class="cx">二戰期間不明物體飛越洛杉磯，美軍發射<strong>1,400+發防空砲彈</strong>。標誌性搜索燈照片成UFO史經典。</div><div class="ctg">美國</div><div class="ctg">軍事</div></div></div>
+    <div class="card"><div class="ci"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/15219/production/_116235568_gettyimages-953887854.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1980.12</div><div class="ct">🌲 藍道申森林</div><div class="cx">「英國的羅斯威爾」。美軍基地人員連續三晚目擊三角型飛行器降落森林。副基地司令 Halt 中校親筆備忘錄+錄音。</div><div class="ctg">英國</div><div class="ctg">軍方</div></div></div>
+    <div class="card"><div class="ci"><img src="https://assets.editorial.aetnd.com/uploads/2017/07/the-belgium-wave-ufo.jpg?width=2048&height=1161&crop=2048:1161,smart&quality=75" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1989.11–1990.04</div><div class="ct">🔺 比利時UFO浪潮</div><div class="cx">大型黑色三角型UFO遍佈全國。空軍F-16攔截，雷達鎖定，物體瞬間280→<strong>1,800km/h</strong>。軍方公開雷達數據。</div><div class="ctg">比利時</div><div class="ctg">雷達</div></div></div>
+    <div class="card"><div class="ci"><img src="https://allthatsinteresting.com/wordpress/wp-content/uploads/2021/02/cleaned-up-phoenix-lights-photo.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">1997.03.13</div><div class="ct">💡 鳳凰城光點</div><div class="cx">數千居民（含州長Symington）目擊巨大V型光點無聲飛過<strong>480公里</strong>。州長後承認「非人類技術」。</div><div class="ctg">美國</div><div class="ctg">萬人</div></div></div>
+    <div class="card"><div class="ci"><img src="https://i.dailymail.co.uk/1s/2023/08/31/17/74927575-0-image-a-3_1693499820525.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2006.11.07</div><div class="ct">✈️ 芝加哥O'Hare機場</div><div class="cx"><strong>12名</strong>聯航員工（機師、督導、機械師）目擊碟形UFO在C17閘口無聲懸浮，突然垂直穿透雲層。FAA拒調查。</div><div class="ctg">美國</div><div class="ctg">機場</div></div></div>
+    <div class="card"><div class="ci"><img src="https://static.toiimg.com/thumb/imgsize-51100,msid-107431502,width-600,height-335,resizemode-75/107431502.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2008.01.08</div><div class="ct">🤠 史蒂芬維爾</div><div class="cx">德州數十人目擊<strong>1.6公里長</strong>巨型物體被戰機追擊。軍方先否認後承認F-16出動。FAA雷達FOIA確認。</div><div class="ctg">美國</div><div class="ctg">雷達</div></div></div>
+    <div class="card"><div class="ci"><img src="https://www.ufoinsight.com/wp-content/uploads/2019/08/Aguadilla-Main-Underwater-UFO.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2013.04.26</div><div class="ct">🌊 阿瓜迪亞事件</div><div class="cx">CBP飛機紅外線拍到物體在波多黎各機場上空<strong>潛入水中又飛出</strong>，展現跨介質移動。AARO歸因「熱燈籠」但仍有爭議。</div><div class="ctg">波多黎各</div><div class="ctg">水空</div></div></div>
+    <div class="card"><div class="ci"><img src="https://www.the-sun.com/wp-content/uploads/sites/6/2020/01/CM-COMP-PILOT-1.jpg?strip=all&quality=100&w=1500&h=1000&crop=1" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="cd">2019.07</div><div class="ct">🚢 航母UFO蜂群</div><div class="cx"><strong>100+</strong>不明物體蜂群式包圍美軍戰艦數週。船員透露物體展現「無法解釋的能力」。軍方稱「無人機」，目擊者質疑。</div><div class="ctg">美國</div><div class="ctg">海軍</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1966.04.06</div><div class="ct">🏫 澳洲 Westall 事件</div><div class="cx">墨爾本Westall高中<strong>200+學生和老師</strong>在光天化日下目擊灰色碟形UFO降落校園附近草地。澳洲最著名集體目擊。</div><div class="ctg">澳洲</div><div class="ctg">學校</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1976.09.19</div><div class="ct">🇮🇷 德黑蘭 UFO 事件</div><div class="cx">伊朗空軍F-4戰機攔截UFO，接近時<strong>戰機電子系統和武器系統全部失靈</strong>，撤離後恢復。美國國防情報局高度重視。</div><div class="ctg">伊朗</div><div class="ctg">EMP</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1986.11.17</div><div class="ct">✈️ 日航1628班機事件</div><div class="cx">日本航空波音747貨機飛越阿拉斯加時，機長和副機長目擊<strong>三個巨大發光物體</strong>護航飛行超過30分鐘。FAA官方雷達記錄確認不明目標存在。</div><div class="ctg">阿拉斯加</div><div class="ctg">FAA雷達</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1967.05.20</div><div class="ct">🍁 獵鷹湖事件</div><div class="cx">加拿大馬尼托巴省，一名地質學家在獵鷹湖露營時目擊兩個雪茄形UFO，其中一個降落。他走近觸摸時被<strong>高溫排氣灼傷</strong>胸口，需住院治療。加拿大「最完整文檔UFO案」。</div><div class="ctg">加拿大</div><div class="ctg">物理接觸</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1952.07.19-20</div><div class="ct">🏛️ 華盛頓DC UFO事件</div><div class="cx">多個不明光點在<strong>白宮和國會大廈上空</strong>出現，空軍F-94戰機緊急攔截但目標從雷達消失。連續兩晚發生，全球頭條，迫使杜魯門總統親自致電空軍要求解釋。</div><div class="ctg">華盛頓DC</div><div class="ctg">總統關注</div></div></div>
+    <div class="card"><div class="cb"><div class="cd">1980.04</div><div class="ct">🛡️ 祕魯空軍攔截事件</div><div class="cx">祕魯空軍Su-22戰機攔截一巨型球體UFO，飛行員 Oscar Santa Maria 開火後物體毫髮無傷，反而<strong>瞬間從2,000英尺爬升至60,000英尺</strong>。祕魯國防部官方公開事件報告。</div><div class="ctg">祕魯</div><div class="ctg">交戰</div></div></div>
   </div>
 </div>
 
-</div><!-- /tab-content-wrap -->
+<!-- ═══ TAB: GALLERY ═══ -->
+<div class="tp" id="t-gallery">
+  <div class="st">📸 解密影像資料庫</div>
+  <div class="grid2">
+    <div class="card"><div class="ci"><img src="https://media.defense.gov/2008/Jun/26/2000697153/1200/1200/0/080626-F-1234S-001.JPG" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🛸 空軍解密飛碟設計圖</div><div class="cx">U.S. Air Force 1950s</div><div class="ctg">官方</div></div></div>
+    <div class="card"><div class="ci"><img src="https://image.cnbcfm.com/api/v1/image/106509330-1588069334820usnavyufo2.png?v=1588071060&w=1920&h=1080" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🎯 海軍飛行員UFO影像</div><div class="cx">U.S. Navy / CNBC</div><div class="ctg">海軍</div></div></div>
+    <div class="card"><div class="ci"><img src="https://media.cnn.com/api/v1/images/stellar/prod/180313050904-navy-ufo-encounter.jpg?q=x_2,y_0,h_1078,w_1915,c_crop/w_1280" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🛩️ F/A-18 UFO遭遇</div><div class="cx">CNN / DoD</div><div class="ctg">紅外線</div></div></div>
+    <div class="card"><div class="ci"><img src="https://static01.nyt.com/images/2019/05/28/video/00DC-UFO-vid/00DC-UFO-vid-videoSixteenByNine1050-v2.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">📡 「Wow What Is That?」</div><div class="cx">NYT</div><div class="ctg">HUD</div></div></div>
+    <div class="card"><div class="ci"><img src="https://ichef.bbci.co.uk/news/1024/branded_news/63DE/production/_99266552_p05rhx6s.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🔍 戰機HUD捕捉UFO</div><div class="cx">BBC / DoD</div><div class="ctg">雷達</div></div></div>
+    <div class="card"><div class="ci"><img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2021/04/1200/675/UFO2.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🔺 三角型UAP夜視</div><div class="cx">Fox / DoD</div><div class="ctg">夜視</div></div></div>
+    <div class="card"><div class="ci"><img src="https://static.foxnews.com/foxnews.com/content/uploads/2026/05/uap_fbi_dow.jpg" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">📂 2026 WAR.GOV解密</div><div class="cx">Fox / WAR.GOV</div><div class="ctg">2026</div></div></div>
+    <div class="card"><div class="ci"><img src="https://a57.foxnews.com/cf-images.us-east-1.prod.boltdns.net/v1/static/694940094001/033b0fb6-3b24-44a8-802c-e90d8ff37d20/81d239c2-d8b4-4478-a670-ecad222bb2ed/1280x720/match/896/500/image.jpg?ve=1&tl=1" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🎥 F-16 UAP影片</div><div class="cx">Fox / WAR.GOV</div><div class="ctg">2026</div></div></div>
+    <div class="card"><div class="ci"><img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2026/05/1200/675/ufo-spaceship-fbi-investigation-fox-news-001-scaled.jpeg?ve=1&tl=1" alt="" loading="lazy" onclick="olb(this.src)" onerror="this.parentElement.style.display='none'"></div><div class="cb"><div class="ct">🕵️ FBI機密UFO檔案</div><div class="cx">Fox / WAR.GOV</div><div class="ctg">2026</div></div></div>
+  </div>
+</div>
 
-<footer>
-  <p>資料來源：<a href="https://www.dni.gov/" target="_blank">ODNI</a> · <a href="https://www.defense.gov/" target="_blank">DoD</a> · <a href="https://www.aaro.mil/" target="_blank">AARO</a> · <a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV</a> · <a href="https://www.nytimes.com/" target="_blank">NYT</a> · <a href="https://www.cbsnews.com/" target="_blank">CBS</a></p>
-  <p style="margin-top:6px">本頁內容基於美國政府公開資料彙編 | UFO 外星生態分析 | 更新 2026.08</p>
-</footer>
+<!-- ═══ TAB: UPDATES ═══ -->
+<div class="tp" id="t-updates">
+  <div class="st">📊 數據動態與最新發展</div>
+  <div class="fubox">
+    <h3>📈 AARO 數據趨勢</h3>
+    <p><strong>2022.08–2023.04：291宗</strong> UAP報告</p>
+    <p><strong>2023.05–2024.06：757宗</strong> UAP報告（+160%）</p>
+    <p>2025年度報告：報告數持續上升中。AARO 指出改善的軍事回報機制是增長主因。</p>
+    <p>熱點區域：美國東西岸軍事訓練區、中東地區。日本/韓國近期報告增加。</p>
+    <p>超過<strong>2,100+</strong>宗AARO案件已審查並錄入官方數據庫。</p>
+    <p>民間層面：美國境內累計<strong>122,000+</strong>宗歷史目擊報告（ufodatalive.com 統計），其中64,000+有地理坐標。</p>
+
+    <h3 style="margin-top:18px">📅 關鍵發展</h3>
+    <p><strong>2022.07</strong> — AARO 成立，取代臨時UAPTF</p>
+    <p><strong>2024</strong> — 國會通過《UAP披露法案》，設立總統級解密委員會</p>
+    <p><strong>2024.11</strong> — 第二次國會UAP聽證會，聚焦改善回報機制</p>
+    <p><strong>2026.05</strong> — 「PURSUE」大規模解密：<a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV/UFO</a> 公開數十年機密</p>
+
+    <h3 style="margin-top:18px">🔗 官方資源</h3>
+    <p><a href="https://www.aaro.mil/" target="_blank">AARO</a> · <a href="https://www.dni.gov/" target="_blank">ODNI</a> · <a href="https://www.war.gov/UFO/" target="_blank">WAR.GOV/UFO</a> · <a href="https://www.archives.gov/research/topics/uaps" target="_blank">國家檔案館UAP</a></p>
+  </div>
+</div>
+
+</div><!-- /tcw -->
+
+<footer><p>資料來源：ODNI · DoD · AARO · WAR.GOV · National Archives · NYT · BBC · CBS · MUFON · New Space Economy | UFO外星生態分析 2026.08</p></footer>
 
 <script>
-// === STARFIELD ===
-(function(){var c=document.getElementById('stars-canvas'),x=c.getContext('2d'),s=[],N=150;function R(){c.width=window.innerWidth;c.height=window.innerHeight}R();window.addEventListener('resize',R);for(var i=0;i<N;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+.5,t:Math.random()*Math.PI*2,sp:Math.random()*.02+.005});(function D(){x.clearRect(0,0,c.width,c.height);for(var i=0;i<N;i++){var o=s[i];o.t+=o.sp;var a=.3+Math.sin(o.t)*.3;x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fillStyle='rgba(200,220,255,'+a+')';x.fill()}requestAnimationFrame(D)})()})();
-
-// === TAB SWITCHING ===
-document.getElementById('navtabs').addEventListener('click',function(e){
-  if(e.target.tagName!=='BUTTON')return;
-  var tab=e.target.getAttribute('data-tab');
-  document.querySelectorAll('#navtabs button').forEach(function(b){b.classList.remove('active')});
-  e.target.classList.add('active');
-  document.querySelectorAll('.tab-page').forEach(function(p){p.classList.remove('active')});
-  document.getElementById('tab-'+tab).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-});
-
-// === LIGHTBOX ===
+(function(){var c=document.getElementById('sc'),x=c.getContext('2d'),s=[],N=130;function R(){c.width=window.innerWidth;c.height=window.innerHeight}R();window.addEventListener('resize',R);for(var i=0;i<N;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+.5,t:Math.random()*Math.PI*2,sp:Math.random()*.02+.005});(function D(){x.clearRect(0,0,c.width,c.height);for(var i=0;i<N;i++){var o=s[i];o.t+=o.sp;var a=.3+Math.sin(o.t)*.3;x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fillStyle='rgba(200,220,255,'+a+')';x.fill()}requestAnimationFrame(D)})()})();
+document.getElementById('nav').addEventListener('click',function(e){if(e.target.tagName!=='BUTTON')return;var t=e.target.getAttribute('data-t');document.querySelectorAll('#nav button').forEach(function(b){b.classList.remove('on')});e.target.classList.add('on');document.querySelectorAll('.tp').forEach(function(p){p.classList.remove('on')});document.getElementById('t-'+t).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})});
 function olb(u){document.getElementById('lbi').src=u;document.getElementById('lb').classList.add('on');document.body.style.overflow='hidden'}
 function clb(){document.getElementById('lb').classList.remove('on');document.body.style.overflow=''}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')clb()});
